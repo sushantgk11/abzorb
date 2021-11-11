@@ -7,14 +7,369 @@
     <link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
-   <style amp-custom>
-      
+    <!-- Font Awesome  -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+   
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <link rel="canonical" href="https://amp.dev/documentation/examples/components/amp-carousel/index.html">
+  
+  
+  <style amp-custom>
+       *{
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+     nav
+        {
+            background-color: rgb(0, 0, 97);
+            width: 100%;
+            height: 70px;
+            line-height: 70px;
+            padding: 0 2rem 0 2rem;
+        }
+        nav div {
+            display: flex;
+            justify-content: space-between;
+        }
+        nav ul li 
+        {
+            display: inline-block;
+            padding: 0 20px;
+         
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+        }
+        nav ul li a, #sidebar1 ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        #sidebar1 ul {
+           width: 50%;
+           margin: auto auto;
+        }
+        #sidebar1 ul li {
+            line-height: 3rem;
+            list-style-type: none;
+        }
+        .update {
+            padding: 5px 10px 5px 10px;
+            border-radius: 10px;
+            border: none;
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .toggle-open {
+            display: none;
+        }
+        @media (max-width:992px)
+        {
+            .toggle-open {
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 1rem;
+        }
+        nav ul 
+        {
+            display: none;
+        }
+        .update {
+            margin-top: 2rem;
+        }
+        }
+
+        .fa-bars {
+            color: white;
+            font-size: 40px;
+        }
+        .toggle-close 
+        {
+            outline: none;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+
+        }
+        .fa-times {
+            color: white;
+            font-size: 40px;
+           
+        }
+        #sidebar1
+        {
+            background-color:black;
+            width: 90%;
+            color: white;
+        }
+
+
+        /* Home Page */
+        .home-slider 
+        {
+            width: 100%;
+            height: auto;
+            
+        }
+        .first-slide {
+            width: 100%;
+            height: auto;
+            background-image: url('./Assets/Web_Banner\ 2.png');
+        }
+        .first-slide .row {
+            width: 100%;
+            min-height: 100%;
+            display: flex;
+            flex-direction: row;
+            padding: 3rem ;
+            /* border: 2px solid yellow; */
+        }
+        .first-slide .image-section {
+            width: 40%;
+            /* border: 2px solid red; */
+            display: inline-block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .first-slide .image-section .banner-circle-container {
+            display: none;
+        }
+        .first-slide .content-section {
+            width: 60%;
+            /* border: 2px solid blue; */
+        }
+       .first-slide .content-section {
+           display: flex;
+           flex-direction: column;
+           justify-content: flex-start;
+           align-content: center;
+       }
+       .first-slide .content-section p {
+           color: rgb(1, 1, 123);
+           font-size: 3.2rem;
+           font-weight: 600;
+           font-family: Poppins,sans-serif;
+           margin-top: 3rem;
+           
+       }
+       .first-slide .content-section p span {
+           font-weight: 800;
+       }
+       .first-slide .content-section .explore-more {
+           width: auto;
+           background: red;
+           padding: 15px 0;
+           color: white;
+           border: none;
+           border-radius: 30px;
+           width: 150px;
+           font-size: 1rem;
+           cursor: pointer;
+           margin-top: 1rem;
+       }
+       .first-slide .content-section .banner-circle-container {
+           width: 100%;
+           height: 14rem;
+           /* border: 5px solid red; */
+           display: flex;
+           flex-direction: row;
+           justify-content: flex-end;
+           margin-top: -2rem;
+           
+       }
+       .banner-circle-container img 
+       {
+           width: 14rem;
+           height: 14rem;
+           margin-right: 5rem;
+       }
+       @media (max-width:992px)
+       {
+        .first-slide .content-section p {
+            font-size: 2.8rem;
+        }
+       }
+       @media (max-width:800px)
+       {
+           .first-slide .row {
+               flex-direction: column;
+                padding-top: 0;
+                justify-content: center;
+                align-items: center;
+           }
+        .first-slide .content-section {
+            order: 1;
+            width: 80%;
+            
+        }
+        .first-slide .image-section {
+            order: 2;
+            margin-top: 2rem;
+        }
+        .first-slide .content-section p {
+            font-size: 2rem;
+            margin: 1rem;
+            text-align: center;
+        }
+        .first-slide .content-section .explore-more {
+            margin: auto;
+        }
+        .first-slide .content-section .banner-circle-container {
+            display: none;
+        }
+        .first-slide .image-section .banner-circle-container {
+            display: block;
+        }
+        .first-slide .image-section > img {
+            width: 15rem;
+        }
+        .first-slide .image-section .banner-circle-container img {
+            width: 12rem;
+            height: 12rem;
+        }
+        
+
+       }
+       @media (max-width:576px)
+       {
+        .first-slide .row {
+            padding: 0;
+        }
+        
+        .first-slide .content-section p {
+            font-size: 1.8rem;
+            margin: 0.5rem;
+            text-align: center;
+        }
+        .first-slide .content-section .explore-more {
+            margin: auto;
+        }
+        .first-slide .image-section > img {
+            width: 12rem;
+        }
+        .first-slide .image-section .banner-circle-container img {
+            width: 10rem;
+            height: 10rem;
+        }
+
+       }
+       @media (max-width:576px) {
+        .first-slide .image-section {
+            border: 2px solid red;
+            width: auto;
+        }
+        .first-slide .image-section > img {
+            width: 10rem;
+        }
+        .first-slide .image-section .banner-circle-container img {
+            width: 8rem;
+            height: 8rem;
+        }
+       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        footer{
+            width: 100%;
+            min-height: 10rem;
+            background-color: black;
+            color: white;
+            display: grid;
+            place-content: center;
+        }
     </style>
 </head>
   <body>
+      <header>
+           <!-- Navbar  -->
+        <nav>
+            <a class="toggle-open" on="tap:sidebar1.open"><i class="fas fa-bars"></i></a>
+            <div>
+            <div class="brand"><img src="./Assets/header-logo.png" alt=""></div>
+            <ul>
+                <li><a href=""> Benefit</a></li>
+                <li> <a href=""> Product</a></li>
+                <li><a href=""> video</a></li>
+                <li><a href=""> FAQs</a></li>
+                <li> <a href=""> Testimonial</a></li>
+                <button class="update">Get Updates</a></button>
+            </ul>
+        </div>
+        </nav>
+        
+       
+        <!-- Sidebar  -->
+        <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
+            <a class="toggle-close" on="tap:sidebar1.close"><i class="fas fa-times"></i></a>
+            <ul>
+                <li><a href="#"><img src="./Assets/header-logo.png" alt=""></li>
+                <li><a href=""> Benefit</a></li>
+                <li> <a href=""> Product</a></li>
+                <li><a href=""> video</a></li>
+                <li><a href=""> FAQs</a></li>
+                <li> <a href=""> Testimonial</a></li>
+                <button class="update">Get Updates</a></button>
+            </ul>
+          </amp-sidebar>
+      </header>
+      <!-- First Page  -->
       <section class="home-slider">
-        <h1>Hello Abzorb</h1>
-    </section>
+        
+        <amp-carousel height="600" layout="fixed-height" type="slides" role="region" aria-label="Carousel with arbitrary HTML content">
+            <div>
+              <div class="first-slide">
+               <div class="row">
+                   <div class="image-section">
+                    <img src="./Assets/mb-banner-10.png" alt="">
+                    <div class="banner-circle-container">
+                        <img src="./Assets/banner-circle.png" alt="">
+                    </div>
+                   </div>
+                   <div class="content-section">
+                    <p>Mujhe Paseeney aur <br>
+                        khujli se door rakhta hai <span> Abzorb, Aur aapko?</span></p>
+                    <button class="explore-more">Explore More</button>
+                    <div class="banner-circle-container">
+                        <img src="./Assets/banner-circle.png" alt="">
+                    </div>
+                   </div>
+               </div>
+              </div>
+            </div>
+            <div>
+              <div class="second-slide">
+                This is a red box.
+              </div>
+            </div>
+            <div>
+              <div class="third-slide">
+                This is a green box.
+              </div>
+            </div>
+          </amp-carousel>
+</section>
+<footer>
+<h2>Footer Section</h2>
+</footer>
   </body>
 </html>
