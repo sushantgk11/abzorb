@@ -9,10 +9,19 @@
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <!-- Font Awesome  -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <!-- Google-font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
    
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <link rel="canonical" href="https://amp.dev/documentation/examples/components/amp-carousel/index.html">
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
   
   
   <style amp-custom>
@@ -21,10 +30,14 @@
            padding: 0;
            box-sizing: border-box;
        }
+       header {
+        background-color: rgb(0, 0, 97)
+       }
      nav
         {
             background-color: rgb(0, 0, 97);
-            width: 100%;
+            max-width: 1300px;
+            margin: auto;
             height: 70px;
             line-height: 70px;
             padding: 0 2rem 0 2rem;
@@ -115,31 +128,33 @@
         }
         .first-slide {
             width: 100%;
-            height: auto;
+            min-height: 45rem;
             background-image: url('./Assets/Web_Banner\ 2.png');
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         .first-slide .row {
-            width: 100%;
-            min-height: 100%;
+            max-width: 1200px;
+            margin: auto;
             display: flex;
             flex-direction: row;
             padding: 3rem ;
-            /* border: 2px solid yellow; */
         }
         .first-slide .image-section {
             width: 40%;
-            /* border: 2px solid red; */
             display: inline-block;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-end;
+        }
+        .first-slide .image-section img {
+            margin-bottom: 5rem;
         }
         .first-slide .image-section .banner-circle-container {
             display: none;
         }
         .first-slide .content-section {
             width: 60%;
-            /* border: 2px solid blue; */
         }
        .first-slide .content-section {
            display: flex;
@@ -149,7 +164,7 @@
        }
        .first-slide .content-section p {
            color: rgb(1, 1, 123);
-           font-size: 3.2rem;
+           font-size: 3rem;
            font-weight: 600;
            font-family: Poppins,sans-serif;
            margin-top: 3rem;
@@ -186,32 +201,46 @@
            height: 14rem;
            margin-right: 5rem;
        }
+       @media (max-width:1100px)
+       {
+        .first-slide .image-section img {
+            margin-bottom: 7rem;
+            /* border: 10px solid green; */
+        }
+       }
        @media (max-width:992px)
        {
         .first-slide .content-section p {
             font-size: 2.8rem;
         }
+        .first-slide .image-section img {
+            margin-bottom: 5rem;
+            /* border: 10px solid red; */
+        }
        }
-       @media (max-width:800px)
+       @media (max-width:850px)
        {
            .first-slide .row {
                flex-direction: column;
                 padding-top: 0;
                 justify-content: center;
                 align-items: center;
+                /* border: 2px solid yellow; */
            }
         .first-slide .content-section {
             order: 1;
             width: 80%;
+            /* border: 2px solid red; */
             
         }
         .first-slide .image-section {
             order: 2;
             margin-top: 2rem;
+            /* border: 2px solid red; */
         }
         .first-slide .content-section p {
             font-size: 2rem;
-            margin: 1rem;
+            margin: 1rem 0;
             text-align: center;
         }
         .first-slide .content-section .explore-more {
@@ -227,6 +256,7 @@
             width: 15rem;
         }
         .first-slide .image-section .banner-circle-container img {
+            margin-top: 5rem;
             width: 12rem;
             height: 12rem;
         }
@@ -240,15 +270,13 @@
         }
         
         .first-slide .content-section p {
-            font-size: 1.8rem;
+            font-size: 1.3rem;
             margin: 0.5rem;
             text-align: center;
+            /* font-weight: bold; */
         }
         .first-slide .content-section .explore-more {
             margin: auto;
-        }
-        .first-slide .image-section > img {
-            width: 12rem;
         }
         .first-slide .image-section .banner-circle-container img {
             width: 10rem;
@@ -258,20 +286,1226 @@
        }
        @media (max-width:576px) {
         .first-slide .image-section {
-            border: 2px solid red;
-            width: auto;
+            /* border: 2px solid red; */
+            width: 80%;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
         }
         .first-slide .image-section > img {
-            width: 10rem;
+            width: 15rem;
+            /* margin-left: 1rem; */
+            position: relative;
         }
         .first-slide .image-section .banner-circle-container img {
-            width: 8rem;
-            height: 8rem;
+            width: 10rem;
+            height: 10rem;
+            position: absolute;
+            left: 50%;
+            top: 8rem;
         }
        }
 
+/* second slide  */
+.second-slide {
+            width: 100%;
+            min-height: 45rem;
+            background-image: url('./Assets/Web_Banner\ 2.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .second-slide .row {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            padding: 2rem ;
+            /* border: 2px solid red; */
+        }
+        .second-slide .image-section1 {
+            width: 30%;
+            display: inline-block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .second-slide .image-section1 img{
+            margin-bottom: 3.5rem;
+        }
+        .second-slide .image-section1 img:nth-child(2){
+            display: none;
+        }
+
+       .second-slide .content-section {
+           display: flex;
+           flex-direction: column;
+           justify-content: flex-start;
+           align-content: center;
+           width: 40%;
+           /* padding-left: 2rem; */
+       }
+       .second-slide .content-section p {
+           color: rgb(1, 1, 123);
+           font-size: 3.2rem;
+           font-weight: 600;
+           font-family: Poppins,sans-serif;
+           margin-top: 3rem;
+           text-align: center;
+           /* border: 2px solid red; */
+           
+       }
+       .second-slide .content-section .explore-more {
+           width: auto;
+           background: red;
+           padding: 15px 0;
+           color: white;
+           border: none;
+           border-radius: 30px;
+           width: 150px;
+           font-size: 1rem;
+           cursor: pointer;
+           margin: auto;
+           margin-top: 1rem;
+           
+       }
+       .second-slide .image-section2 {
+           width: 30%;
+           /* border: 2px solid yellow; */
+           display: flex;
+           justify-content: flex-start;
+           align-items: flex-end;
+       }
+
+       .second-slide .image-section2 img {
+          width: 15rem;
+          margin-bottom: 1rem;
+       }
+       @media (max-width:1200px)
+       {
+           .second-slide .image-section1 img {
+               width: 18rem;
+               margin-bottom: -3rem;
+           }
+           .second-slide .content-section p {
+            margin-top: 1rem;
+       }
+       }
+       @media (max-width:992px)
+       {
+          
+        .second-slide .content-section p {
+            margin-top: 1rem;
+            padding: 0;
+            font-size: 2.5rem;
+       }
+       .second-slide .image-section1 img {
+            width: 16rem;
+            margin-top: 5.5rem;
+            
+       }
+    }
+    @media (max-width:768px)
+    {
+        .second-slide .row {
+               flex-direction: column;
+                padding-top: 0;
+                justify-content: center;
+                align-items: center;
+                /* border: 2px solid yellow; */
+           }
+         
+           .second-slide .image-section1 img:nth-child(2){
+            display: block;
+            /* border: 2px solid yellow; */
+            margin-top: 1rem;
+            width: 20rem;
+
+        }
+        .second-slide .image-section1 img:nth-child(1){
+            display: none;
+        }
+        .second-slide .image-section2  {
+            display: none;
+        }
+        .second-slide .content-section img {
+            display: none;
+        }
+        .second-slide .content-section {
+            order: 1;
+            width: 80%;
+            /* border: 2px solid blue; */
+        }
+        .second-slide .image-section1 {
+            order: 2;
+            display: flex;
+            align-items: flex-start;
+               /* border: 1px solid red; */
+        }
+        .second-slide .content-section p {
+            font-size: 2rem;
+            margin: 1rem;
+            text-align: center;
+        }
+        .second-slide .content-section .explore-more {
+            margin: auto;
+        }
+    }
+    @media(max-width:576px){
+        .second-slide .content-section p {
+            font-size: 1.3rem;
+            /* border: 2px solid red; */
+        }
+    }
+
+/* Slider3  */
+.third-slide {
+            width: 100%;
+            min-height: 45rem;
+            background-image: url('./Assets/Web_Banner\ 2.png');
+            background-repeat: no-repeat;
+            /* border: 2px solid blue; */
+            background-size: cover;
+        }
+        .third-slide .row {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            padding: 2rem ;
+            /* border: 2px solid red; */
+        }
+        .third-slide .image-section1 {
+            width: 55%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            /* border: 5px solid blue; */
+        }
+        .third-slide .image-section1 img{
+            margin-top: 7rem;
+            width: 35rem
+         }
+        .third-slide .image-section2 {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .third-slide .image-section2 img 
+        {
+            width: 20rem;
+        }
+        .third-slide .image-section2 .explore-more {
+           width: auto;
+           background: red;
+           padding: 15px 0;
+           color: white;
+           border: none;
+           border-radius: 30px;
+           width: 150px;
+           font-size: 1rem;
+           cursor: pointer;
+           margin-top: 1rem;
+       }
+
+       @media (max-width:992px){
+           .third-slide .image-section1 img {
+            width: 30rem;
+           }
+           .third-slide .image-section2 img {
+               width: 16rem;
+           }
+       }
+       @media(max-width:850px){
+           .third-slide .row {
+               flex-direction: column;
+               justify-content: space-around;
+               align-items: center;
+           }
+       .third-slide .image-section1 {
+           width: 80%;
+            order: 2 ;
+            /* border: 2px solid blue; */
+            justify-content: space-around;
+            align-items: center;
+
+        }
+        .third-slide .image-section1 img {
+            width: 25rem;
+            /* border: 2px solid yellow; */
+            margin-top: 1rem;
+        }
+        .third-slide .image-section2 {
+            width: 80%;
+            order: 1;
+            /* border: 2px solid red; */
+        }
+        .third-slide .image-section2 img{
+           width: 14rem;
+           height: 12rem;
+            
+        }
+     
+    }
+    @media (max-width:576px){
+           .third-slide .image-section1 img {
+            width: 20rem;
+           }
+           .third-slide .image-section2 img {
+               width: 10rem;
+           }
+    }
+
+    /* Second Page  */
+    .uses {
+        width: 100%;
+        background: url('./Assets/uses-bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* min-height: 42rem; */
+        height: auto;
+    }
+    .uses > h2 {
+        font-size: 250%;
+        font-weight: 600;
+        font-family: Poppins,sans-serif;
+        color: white;
+        text-align: center;
+        padding-top: 3rem;
+    }
+    .uses > p {
+        font-size: 150%;
+        /* font-weight: 600; */
+        font-family: Poppins,sans-serif;
+        color: white;
+        text-align: center;
+    }
+    
+
+    .uses .container {
+        max-width: 1200px;
+        margin: auto;
+        /* border: 2px solid red; */
+    }
+    .uses .container .row {
+        padding-top: 3rem;
+        width: 100%;
+        /* border: 2px solid yellow; */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
+    .uses .container .row > div   {
+        width: 30%;
+        min-height: 27rem;
+        /* border: 2px solid blue; */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .uses .container .row > div  figure {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .uses figure figcaption {
+        /* margin-top: -3rem ; */
+        width: 80%;
+    }
+
+    .uses .container .row > div .image-container {
+        width:22rem;
+        height: 18rem;
+        background-image: url('./Assets/Polygon.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 2px solid pink; */
+    }
+    @media (max-width:1200px)
+    {
+        .uses .container .row {
+            width: 95%;
+            justify-content: space-between;
+            margin: auto;
+        }
+        .uses .container .row > div .image-container img {
+            width: 10rem;
+            height: 10rem;
+        }
+    }
+    @media (max-width:992px){
+        .uses .container .row {
+            width: 100%;
+            justify-content: space-around;
+        }
+        .uses .container .row > div .image-container {
+            width: 18rem;
+            height: 18rem;
+        }
+        .uses .container .row > div .image-container img {
+            width: 7rem;
+            height: 7rem;
+            /* margin-bottom: 4rem; */
+        }
+        .uses figure figcaption {
+        margin-top: -3rem ;
+        /* width: 80%; */
+    }
+    }
+    .uses figure figcaption section h2{
+        width: 100%;
+        background-color: #1b6ab0;
+        padding: 1rem;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+
+    }
+    .uses figure figcaption section div {
+        background-color: #1b6ab0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-top: -10px;
+        padding: 10px;
+    }
+    .uses figure figcaption section p {
+        width: 100%;
+        text-align: center;
+        color: white;
+    }
+    .uses .container .row:nth-child(2)
+    {
+        display: none;
+    }
+    
+    @media (max-width:800px)
+    {
+        .uses .container .row:nth-child(1) {
+            display: none;
+        }
+        .uses .container .row:nth-child(2)
+    {
+        display: block;
+    }
+    .uses > h2 {
+        font-size: 200%;
+        font-weight: 600;
+       padding-left: 1rem;
+       padding-right: 1rem;
+      
+    }
+    .uses > p {
+        font-size: 120%;
+        
+    }
+    }
+   
+    .uses .use-slides {
+        border: 2px solid red;
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+    .uses .use-slides .image-container {
+        width:18rem;
+        height: 15rem;
+        background-image: url('./Assets/Polygon.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 2px solid yellow; */
+    }
+    .uses .use-slides figure figcaption {
+        margin-top: 0;
+        width: 18rem;
+    }
+    .uses .use-slides figure figcaption section {
+        width: 100%;
+        text-align: center;
+        color: white;
+
+    }
+    .uses .use-slides figure figcaption section div {
+        background-color: #1b6ab0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-top: -10px;
+        padding: 10px;
+    }
+    .uses .use-slides figure figcaption section p {
+        width: 100%;
+        text-align: center;
+        color: white;
+
+    }
+   
+
+    /* Third-Page  */
+    .dusting-powder{
+        width: 100%;
+        height: auto;
+        background-image: url('./Assets/bg-3.png');
+        background-repeat: no-repeat;
+    }
+    .dusting-powder .container{
+        max-width: 1200px;
+        margin: auto;
+        padding-bottom: 2rem;
+        /* border: 5px solid red; */
+    }
+
+    .dusting-powder .row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+       
+    }
+    .dusting-powder .row .image-section {
+        width: 40%;
+        /* border: 2px solid yellow; */
+    }
+   
+    .dusting-powder .row .content-section {
+        width: 60%;
+        /* border: 2px solid pink; */
+        padding-top: 3rem;
+    }
+    .dusting-powder .row .image-section img {
+        width: 100%;
+    }
+    .dusting-powder .row .content-section .link-btns {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .dusting-powder .row .content-section a img,  .dusting-powder .row .image-section .link-btns a img {
+        width: 12rem;
+    }
+    .dusting-powder .row .content-section button,  .dusting-powder .row .image-section .link-btns button {
+        display: inline-block;
+        width: 10rem;
+        padding: 1rem;
+        margin-left: 0.8rem;
+        border-radius: 10px;
+        border: none;
+        font-size: 1rem;
+        text-transform: capitalize;
+        font-weight: bold;
+        color: rgb(0, 0, 128);
+        cursor: pointer;
+    }
+    .dusting-powder .row .content-section >p {
+        color: white;
+        font-family: Poppins,sans-serif;
+        font-size: 0.9rem;
+        font-weight: normal;
+        letter-spacing: 1px;
+    }
+    .dusting-powder .row .content-section hr {
+        border: 0.5px solid rgb(164, 164, 226);;
+        margin-top: 0.5rem;
+    }
+    .dusting-powder .row .content-section .detail-cards .row {
+        display: flex;
+        /* flex-basis: 50%; */
+flex-direction: row;
+justify-content: center;
+align-items: center;
+    }
+    .dusting-powder .row .content-section .detail-cards .row .card {
+        width: 50%;
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        /* padding: 1rem; */
+        min-height: 8rem;
+    }
+    .dusting-powder .row .content-section .detail-cards .row .card img {
+        width: 5rem;
+        margin-right: 1rem;
+    }
+    .dusting-powder .row .content-section .detail-cards .row .card h3 {
+     
+        font-family:  Poppins,sans-serif;;
+        color: white;
+        font-size: 1rem;
+    }
+    .dusting-powder .row .content-section .detail-cards .row .card p{
+     
+     font-family:  Poppins,sans-serif;;
+     color: white;
+     font-size: 0.8rem;
+ }
+ .dusting-powder .row .content-section .link-btns2 {
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+        margin-top: 1rem;
+    }
+ .dusting-powder .row .content-section .detail-cards .buy-now-btn {
+            width: 10rem;
+           background: red;
+           padding: 15px 0;
+           color: white;
+           border: none;
+           border-radius: 30px;
+           font-size: 1rem;
+           cursor: pointer;
+           margin-right: 1rem;
+ }
+ .dusting-powder .row .content-section .detail-cards .get-updates-link{
+     color: white;
+     font-family:  Poppins,sans-serif;;
+     font-size: 1rem;
+
+ }
+ .dusting-powder .row .image-section .link-btns {
+     display: none;
+ }
+ @media (max-width:992px)
+ {
+    .dusting-powder .row .content-section >p {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+    .dusting-powder .row .content-section .detail-cards .row .card h3 {
+     font-size: 0.9rem;
+ }
+ .dusting-powder .row .content-section .detail-cards .row .card p{
+  font-size: 0.7rem;
+}
+ }
+ @media(max-width:850px){
+        .dusting-powder{
+        background-image: url('./Assets/mb-bg-3.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        }
+        .dusting-powder .row {
+         flex-direction: column;
+        }
+    .dusting-powder .row .image-section {
+        width: 70%;
+        margin: auto;
+        padding-top: 0;
+        margin-top: 0;
+        /* border: 5px solid yellow; */
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3rem;
+    
+    }
+    .dusting-powder .row .image-section > img {
+        /* margin-top: -2rem; */
+        padding: 0%;
+
+    }
+    
+   
+    .dusting-powder .row .content-section .link-btns{
+        display: none;
+    }
+    
+    .dusting-powder .row .image-section .link-btns{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        /* border: 2px solid red; */
+        margin-bottom: 0;
+    }
+    .dusting-powder .row .content-section {
+        width: 80%;
+        padding: 1rem;
+        margin: auto;
+        /* border: 5px solid red; */
+    }
+    .dusting-powder .row .content-section .detail-cards .row {
+        display: flex;
+        /* flex-basis: 50%; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .dusting-powder .row .content-section .detail-cards .row .card {
+        justify-content: flex-start;
+        width: 100%;
+    }
+}
+@media(max-width:576px)
+{
+    .dusting-powder .row .content-section a img,  .dusting-powder .row .image-section .link-btns a img {
+        width:5.5rem;
+    }
+    .dusting-powder .row .content-section button,  .dusting-powder .row .image-section .link-btns button {
+        width:auto;
+        font-size: 0.75rem;
+        font-weight: bold;
+        padding: 0.5rem;
+    }
+}
 
 
+
+/* Fourth-Page  */
+.antifungal-cream {
+        width: 100%;
+        height: auto;
+        background-image: url('./Assets/bg-4.jpg');
+        background-repeat: no-repeat;
+    }
+    .antifungal-cream .container{
+        max-width: 1200px;
+        margin: auto;
+        padding-bottom: 2rem;
+    }
+
+    .antifungal-cream .row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+       
+    }
+    .antifungal-cream .row .image-section {
+        width: 40%;
+        /* border: 2px solid yellow; */
+        order: 2;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+   
+    .antifungal-cream .row .content-section {
+        width: 60%;
+        /* border: 2px solid pink; */
+        padding-top: 3rem;
+    }
+    .antifungal-cream .row .image-section img {
+        width: 100%;
+    }
+    .antifungal-cream .row .content-section .link-btns {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    .antifungal-cream .row .content-section a img,  .antifungal-cream .row .image-section .link-btns a img {
+        width: 12rem;
+    }
+    .antifungal-cream .row .content-section button,  .antifungal-cream .row .image-section .link-btns button {
+        display: inline-block;
+        width: 12rem;
+        padding: 1rem;
+        margin-left: 0.8rem;
+        border-radius: 10px;
+        border: none;
+        font-size: 0.9rem;
+        text-transform: capitalize;
+        font-weight: bold;
+        color: rgb(0, 0, 128);
+        cursor: pointer;
+    }
+    .antifungal-cream .row .content-section >p {
+        color: white;
+        font-family: Poppins,sans-serif;
+        font-size: 0.9rem;
+        font-weight: normal;
+        letter-spacing: 1px;
+    }
+    .antifungal-cream .row .content-section hr {
+        border: 0.5px solid rgb(164, 164, 226);;
+        margin-top: 0.5rem;
+    }
+    .antifungal-cream .row .content-section .detail-cards .row {
+        display: flex;
+        /* flex-basis: 50%; */
+flex-direction: row;
+justify-content: center;
+align-items: center;
+    }
+    .antifungal-cream .row .content-section .detail-cards .row .card {
+        width: 50%;
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        /* padding: 1rem; */
+        min-height: 8rem;
+    }
+    .antifungal-cream .row .content-section .detail-cards .row .card img {
+        width: 5rem;
+        margin-right: 1rem;
+    }
+    .antifungal-cream .row .content-section .detail-cards .row .card h3 {
+     
+        font-family:  Poppins,sans-serif;;
+        color: white;
+        font-size: 1rem;
+    }
+    .antifungal-cream .row .content-section .detail-cards .row .card p{
+     
+     font-family:  Poppins,sans-serif;;
+     color: white;
+     font-size: 0.8rem;
+ }
+ .antifungal-cream .row .content-section .link-btns2 {
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+        margin-top: 1rem;
+    }
+    .antifungal-cream .row .content-section .detail-cards .buy-now-btn {
+            width: 10rem;
+           background: red;
+           padding: 15px 0;
+           color: white;
+           border: none;
+           border-radius: 30px;
+           font-size: 1rem;
+           cursor: pointer;
+           margin-right: 1rem;
+ }
+ .antifungal-cream .row .content-section .detail-cards .get-updates-link{
+     color: white;
+     font-family:  Poppins,sans-serif;;
+     font-size: 1rem;
+
+ }
+ .antifungal-cream .row .image-section .link-btns {
+     display: none;
+ }
+ @media (max-width:992px)
+ {
+    .antifungal-cream .row .content-section >p {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+    .antifungal-cream .row .content-section .detail-cards .row .card h3 {
+     font-size: 0.9rem;
+ }
+ .antifungal-cream .row .content-section .detail-cards .row .card p{
+  font-size: 0.7rem;
+}
+ }
+ @media(max-width:850px){
+    .antifungal-cream{
+        background-image: url('./Assets/mb-bg-3.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+        }
+
+        .antifungal-cream .row {
+         flex-direction: column;
+        }
+        .antifungal-cream .row .image-section {
+        width: 70%;
+        margin: auto;
+        padding-top: 0;
+        margin-top: 0;
+        /* border: 5px solid yellow; */
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3rem;
+        order: 1;
+    }
+    .antifungal-cream .row .content-section {
+        order: 2;
+    }
+    .antifungal-cream .row .image-section > img {
+        /* margin-top: -2rem; */
+        padding-top: 3rem;
+
+    }
+    
+   
+    .antifungal-cream .row .content-section .link-btns{
+        display: none;
+    }
+    
+    .antifungal-cream .row .image-section .link-btns{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        /* border: 2px solid red; */
+        margin-bottom: 0;
+    }
+    .antifungal-cream .row .content-section {
+        width: 80%;
+        padding: 1rem;
+        margin: auto;
+        /* border: 5px solid red; */
+    }
+    .antifungal-cream .row .content-section .detail-cards .row {
+        display: flex;
+        /* flex-basis: 50%; */
+flex-direction: column;
+justify-content: center;
+align-items: center;
+    }
+    .antifungal-cream .row .content-section .detail-cards .row .card {
+        justify-content: flex-start;
+        width: 100%;
+    }
+}
+@media(max-width:576px)
+{
+    .antifungal-cream .row .content-section {
+        padding: 0.5rem;
+}
+.antifungal-cream .row .content-section .detail-cards .row .card {
+    margin-top: 1rem;
+}
+.antifungal-cream .row .content-section a img,  .antifungal-cream .row .image-section .link-btns a img {
+        width:5.5rem;
+    }
+    .antifungal-cream .row .content-section button,  .antifungal-cream .row .image-section .link-btns button {
+        width:auto;
+        font-size: 0.75rem;
+        font-weight: bold;
+        padding: 0.5rem;
+    }
+}
+
+
+/* Fifth Page  */
+.first-choice {
+    width: 100%;
+    background-image: url('./Assets/bg-5.png');
+    background-repeat: no-repeat;
+
+}
+.first-choice .container {
+    width: 1200px;
+    width: auto;
+    /* border: 2px solid red; */
+}
+.first-choice .container .row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+    /* border: 2px solid blue; */
+    padding-top: 4rem;
+}
+.first-choice .row .image-section2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    /* border: 2px solid yellow; */
+    margin-left: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    /* border: 5px solid red; */
+   
+}
+.first-choice .row .image-section2 button{
+    width: auto;
+           background: red;
+           padding: 15px 0;
+           color: white;
+           border: none;
+           border-radius: 30px;
+           width: 150px;
+           font-size: 1rem;
+           cursor: pointer;
+           margin-top: 1rem;
+           margin-bottom: 1rem;
+}
+.first-choice .row .image-section2 p {
+    font-size: 0.8rem;
+    /* margin-top: 2rem; */
+    color: white;
+    font-family: Poppins,sans-serif;
+    /* padding: 0rem 2rem; */
+    text-align: center;
+
+}
+
+.first-choice .row .image-section1 .img1, .first-choice .row .image-section2 .img2{
+    display: none;
+}
+@media (max-width:992px){
+    .first-choice .row .image-section2 {
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width:850px)
+{
+    .first-choice {
+        background-image: url('./Assets/mb-bg-5.png');
+        background-size:cover;
+    }
+    .first-choice .row .image-section1 .img1, .first-choice .row .image-section2 .img2{
+    display: block;
+}
+.first-choice .row .image-section1 .img1 {
+    width: 14rem;
+    margin-bottom: 2rem;
+}
+.first-choice .row .image-section1 .img2 {
+    display: none;
+}
+.first-choice .container .row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 0%;
+}
+.first-choice .row .image-section2 .img1 {
+    width: 100%;
+}
+.first-choice .row .image-section2 {
+    margin: 0;
+    padding: 0;
+}
+
+}
+
+
+/* Sixth-page  */
+.faqs-details
+ {
+    width: 100%;
+    background-image: url('./Assets/faq-bg.png');
+    /* height: 100vh; */
+}
+.faqs-details .container{
+max-width:1200px;
+margin: auto;
+/* border: 5px solid yellow; */
+}
+.faqs-details .container .faqs-container {
+    padding: 0 1rem;
+    padding-bottom: 2rem;
+    /* border: 2px solid gray; */
+}
+.faqs-details .container span {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    font-size: 200%;
+   color: white;
+   font-family: Poppins,'sans-sarif';
+   margin: 2rem 0;
+   font-weight: bold;
+    
+}
+.faqs-details .abzorb-video {
+    width: 35rem;
+    /* height: 24rem; */
+    /* border: 2px solid red; */
+    margin: auto;
+}
+@media(max-width:850px)
+{
+    .faqs-details .abzorb-video{
+        width: 25rem;
+    }
+}
+@media(max-width:576px)
+{
+    .faqs-details .abzorb-video{
+        width: 19rem;
+    }
+}
+.faqs-details .container h2 {
+    text-align: center;
+    font-size: 250%;
+   color: white;
+   font-family: Poppins,'sans-sarif';
+   margin-top: 4rem;
+   /* margin-bottom: 3rem; */
+   font-weight: bold;
+    
+}
+
+
+amp-selector[role=tablist].faqs-selector {
+            display: flex;
+        }
+        amp-selector[role=tablist].faqs-selector [role=tab][selected] {
+            outline: none;
+            /* custom styling, feel free to change */
+        }
+        amp-selector[role=tablist].faqs-selector {
+            display: flex;
+        }
+        amp-selector[role=tablist].faqs-selector [role=tab] {
+          /* custom styling, feel free to change */
+          width: 100%;
+          text-align: center;
+        }
+        amp-selector.tabpanels [role=tabpanel] {
+          display: none;
+          /* custom styling, feel free to change */
+        }
+        amp-selector.tabpanels [role=tabpanel][selected] {
+          outline: none;
+          display: block;
+        }
+
+        .faqs-selector {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+      .faqs-selector .tabButton{
+            /* width: 10rem; */
+            border: 2px solid white;
+            border-radius: 30px;
+            padding: 0.8rem 1rem;
+            background-color: rgb(2, 2, 82);
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            font-family: Poppins,'sans-sarif';
+            margin: 2rem;
+        } 
+        .faqs-selector #tab1, .faqs-selector #tab2 {
+            width: 20rem;
+        }   
+        .faqs-selector .tabButton[selected] {
+            background-color: white;
+            color: rgb(2, 2, 82);
+            font-weight: bold;
+        }
+
+       
+        #myTabPanels .faqs-content h3 {
+            background-color:#1b6ab0 ;
+            border: none ;
+            color: white;
+            font-family: Poppins,'sans-sarif';
+            font-weight: normal;
+            /* padding: 1rem; */
+        }
+        #myTabPanels .faqs-content {
+            background-color:#1b6ab0 ;
+        }
+        #myTabPanels .faqs-content section {
+            margin: 1rem;
+            padding: 1rem;
+        }
+        #myTabPanels .faqs-content section div p {
+            color: white;
+            font-family: Poppins,'sans-sarif';
+            font-size: 0.9rem;
+            padding: 0.8rem 0;
+        }
+        @media (max-width:768px){
+            .faqs-selector #tab1, .faqs-selector #tab2 {
+            width:15rem;
+            font-size: 0.9rem;
+        } 
+        .faqs-selector {
+            flex-direction: column;
+        }
+        }
+        @media (max-width:576px){
+            .faqs-details .faqs-content h3{
+                font-size: 1rem;
+            }
+            #myTabPanels .faqs-content section div p {
+                font-size: 0.75rem;
+            }
+
+        }
+        .faqs-details .testimonial-cotainer{
+            /* border: 2px solid red; */
+            /* min-height: 30rem; */
+            display: flex;   
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            
+        }
+        .faqs-details .testimonial-cotainer h2 {
+            color: white;
+            font-family: Poppins,'sans-sarif';
+            font-size: 200%;
+        }
+        .faqs-details .testimonial-cotainer >div {
+            width: 100%;
+        }
+        .faqs-details .testimonial-cotainer .testimonial {
+            /* height: 100%; */
+            /* border: 2px solid cyan; */
+            display: flex;   
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+      
+       .testimonial-content {
+           width: 45rem;
+           /* height: 100%; */
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+           /* border: 2px solid green; */
+       }
+
+       .testimonial-content p {
+           padding: 2rem 1rem;
+           background-color: #1b6ab0;
+           color: white;
+            font-family: Poppins,'sans-sarif';
+            font-size: 1.1rem;
+            border-radius: 10px;
+
+       }
+       .testimonial .testimonial-content > span {
+           display: inline-block;
+           font-size:1.2rem;
+           color: white;
+       }
+       @media (max-width:768px){
+        .testimonial-content  {
+            width: 80%;
+        }
+       }
+       @media (max-width:650px){
+        .testimonial-content p {
+            font-size: 0.9rem;
+        }
+        .testimonial .testimonial-content > span {
+           font-size:0.8rem;
+       }
+       }
+       @media (max-width:400px){
+        .faqs-details .testimonial-cotainer h2 {
+            
+            font-size: 1.2rem;
+        }
+        .testimonial-content p {
+            font-size: 0.7rem;
+        }
+       }
 
 
 
@@ -312,7 +1546,7 @@
                 <li><a href=""> video</a></li>
                 <li><a href=""> FAQs</a></li>
                 <li> <a href=""> Testimonial</a></li>
-                <button class="update">Get Updates</a></button>
+                <button class="update">Get Updates</button>
             </ul>
         </div>
         </nav>
@@ -334,8 +1568,8 @@
       </header>
       <!-- First Page  -->
       <section class="home-slider">
-        
-        <amp-carousel height="600" layout="fixed-height" type="slides" role="region" aria-label="Carousel with arbitrary HTML content">
+        <amp-carousel height="580" layout="fixed-height" type="slides" role="region" controls
+        loop autoplay aria-label="Carousel with arbitrary HTML content">
             <div>
               <div class="first-slide">
                <div class="row">
@@ -358,16 +1592,645 @@
             </div>
             <div>
               <div class="second-slide">
-                This is a red box.
+               <div class="row">
+                   <div class="image-section1">
+                       <img src="./Assets/item2.png" alt="">
+                       <img src="./Assets/mobile-banner-2.png" alt="">
+                   </div>
+                   <div class="content-section">
+                       <p>Khujli se mileygi ab Teen guna raahat</p>
+                       <button class="explore-more">Explore More</button>
+                       <img src="./Assets/slide2.png" alt="">
+                   </div>
+                   <div class="image-section2">
+                        <img src="./Assets/3xfaster.png" alt="">
+                   </div>
+               </div>
               </div>
             </div>
             <div>
               <div class="third-slide">
-                This is a green box.
+               <div class="row">
+                   <div class="image-section1">
+                    <img src="./Assets/slider3.png">
+                   </div>
+                   <div class="image-section2">
+                    <img src="./Assets/slider2-1.png" alt="">
+                    <button class="explore-more">Explore More</button>
+                   </div>
+               </div>
               </div>
             </div>
           </amp-carousel>
 </section>
+
+
+<!-- second page  -->
+<section class="uses">
+    <h2>Stay itch-free, all day, every day</h2>
+        <p>Long-lasting relief from fungal infections & itching</p>
+    <div class="container">
+        
+        <div class="row">
+            <div class="use1">
+            <figure>
+            <div class="image-container">
+                <img src="./Assets/fi.png" layout="responsive"  >
+            </div>
+            <figcaption>
+                <amp-accordion animate>
+                    <section>
+                      <h2>Section 1</h2>
+                      <div>
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, accusantium?.</p>
+                    </div>
+                    </section>
+                </amp-accordion>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="use2">
+            <figure>
+                <div class="image-container">
+                    <img src="./Assets/Controls-Itching.png" layout="responsive" >
+                </div>
+                <figcaption>
+                    <amp-accordion animate>
+                        <section>
+                          <h2>Section 2</h2>
+                        <div>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dignissimos reiciendis quae?.</p></div>
+                        </section>
+                    </amp-accordion>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="use3">
+                <figure>
+                    <div class="image-container">
+                        <img src="./Assets/Excess-sweat.png" layout="responsive" >
+                    </div>
+                    <figcaption>
+                        <amp-accordion animate>
+                            <section>
+                              <h2>Section 3</h2>
+                              <div>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla voluptatibus quas quis provident. Assumenda.</p>
+                            </div>
+                            </section>
+                        </amp-accordion>
+                    </figcaption>
+                  </figure>
+                </div>
+        </div>
+
+
+        <!-- Mobile View  -->
+        <div class="row">
+        <amp-carousel id="use-item-carousel" height="450" layout="fixed-height" type="slides" role="region" controls
+        loop autoplay aria-label="Carousel with arbitrary HTML content">
+            <div>
+              <div class="use-slides slide1">
+                <div class="use1">
+                    <figure>
+                    <div class="image-container">
+                        <img src="./Assets/fi.png" alt=""  >
+                    </div>
+                    <figcaption>
+                        <amp-accordion animate>
+                            <section>
+                              <h2>Section 1</h2>
+                              <div>
+                              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, accusantium?.</p>
+                            </div>
+                            </section>
+                        </amp-accordion>
+                    </figcaption>
+                  </figure> 
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="use-slides slide2">
+            
+                <div class="use2">
+                    <figure>
+                        <div class="image-container">
+                            <img src="./Assets/Controls-Itching.png" alt="" >
+                        </div>
+                        <figcaption>
+                            <amp-accordion animate>
+                                <section>
+                                  <h2>Section 2</h2>
+                                  <div>
+                                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima dignissimos reiciendis quae?.</p>
+                                </div>
+                                </section>
+                            </amp-accordion>
+                        </figcaption>
+                      </figure>
+                    </div>
+              </div>
+            </div>
+            <div>
+              <div class="use-slides slide3">
+                <div class="use3">
+                    <figure>
+                        <div class="image-container">
+                            <img src="./Assets/Excess-sweat.png" layout="responsive" >
+                        </div>
+                        <figcaption>
+                            <amp-accordion animate>
+                                <section>
+                                  <h2>Section 3</h2>
+                                  <div>
+                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla voluptatibus quas quis provident. Assumenda.</p>
+                                </div>
+                                </section>
+                            </amp-accordion>
+                        </figcaption>
+                      </figure>
+                    </div>
+
+              </div>
+            </div>
+          </amp-carousel>
+        </div>
+    </div>
+</section>
+
+
+<section class="dusting-powder">
+<div class="container">
+    <div class="row">
+        <!-- <div> -->
+        <div class="image-section">
+            <div class="link-btns">
+                <a href=""><img src="./Assets/header-logo.png" alt=""></a>
+                <button class="dusting-powder-btn">dusting powder</button>
+            </div>
+            <img src="./Assets/banner-3-img1.png" alt="">
+        </div>
+    <!-- </div> -->
+        <div class="content-section">
+            <div class="link-btns">
+                <a href=""><img src="./Assets/header-logo.png" alt=""></a>
+                <button class="dusting-powder-btn">dusting powder</button>
+            </div>
+            <p>Trusted by skin specialists, Abzorb Dusting Powder’s 2X# sweat control formula absorbs excess sweat and Clotrimazole helps fight fungal infection.</p>
+            <hr>
+            <div class="detail-cards">
+                <div class="row">
+                <div class="card">
+                    <img src="./Assets/Abzorbs Excess Sweat.png" alt="">
+                    <div>
+                    <h3>ABSORBS EXCESS SWEAT</h3>
+                    <p>Unique combination of talc and starch helps absorb excess sweat.</p>
+                </div>
+                </div>
+                <div class="card">
+                    <img src="./Assets/treatsfungal.png" alt="">
+                    <div>
+                    <h3>TREATS FUNGAL INFECTION</h3>
+                    <p>Clotrimazole present in Abzorb Dusting Powder effectively treats fungal infections.</p>
+                </div>
+                </div>
+                </div>
+                <div class="row">
+                <div class="card">
+                    <img src="./Assets/prevent recussion.png" alt="">
+                    <div>
+                    <h3>PREVENTS RECUSSION</h3>
+                    <p>It provides soothing dry maintenance and prevents the recurrence of fungal infections.</p>
+                </div>
+                </div>
+                <div class="card">
+                    <img src="./Assets/Controls Itching.png" alt="">
+                    <div>
+                    <h3>CONTROLS ITCHING</h3>
+                    <p>Abzorb Dusting Powder provides relief from itching & burning sensation.</p>
+                </div>
+                </div>
+            </div>
+            <div class="link-btns2">
+                <button class="buy-now-btn">Buy Now</button>
+                <a href="" class="get-updates-link">Get Updates</a>
+              
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+
+<section class="antifungal-cream">
+    <div class="container">
+        <div class="row">
+            <!-- <div> -->
+            <div class="image-section">
+                <div class="link-btns">
+                    <a href=""><img src="./Assets/header-logo.png" alt=""></a>
+                    <button class="dusting-powder-btn">antifungal cream</button>
+                </div>
+                <img src="./Assets/fungalCream.png" alt="">
+            </div>
+        <!-- </div> -->
+            <div class="content-section">
+                <div class="link-btns">
+                    <a href=""><img src="./Assets/banner-4-logo.png" alt=""></a>
+                    <button class="dusting-powder-btn">antifungal cream</button>
+                </div>
+                <p>The new generation antifungal cream provides effective and fast relief from fungal infections such as Jock Itch, infection between the folds of inner thighs, underside of breasts and armpit, and toes & fingers.</p>
+                <hr>
+                <div class="detail-cards">
+                    <div class="row">
+                    <div class="card">
+                        <img src="./Assets/treatsfungal.png" alt="">
+                        <div>
+                        <h3>TREATS FUNGAL INFECTION</h3>
+                        <p>The best in class antifungal molecule, terbinafine treats fungal infections on skin effectively.</p>
+                    </div>
+                    </div>
+                    <div class="card">
+                        <img src="./Assets/redness.png" alt="">
+                        <div>
+                        <h3>REDUCES REDNESS</h3>
+                        <p>AbzorbT antifungal cream provides fast relief from fungal infections & helps reduce redness.</p>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="card">
+                        <img src="./Assets/Controls Itching.png" alt="">
+                        <div>
+                        <h3>ABSORBS EXCESS SWEAT</h3>
+                        <p>Abzorb T Antifungal Cream provides effective and 3X~ faster relief for itchy skin.</p>
+                    </div>
+                    </div>
+                    <div class="card">
+                        <img src="./Assets/spreading.png" alt="">
+                        <div>
+                        <h3>PREVENTS SPREADING</h3>
+                        <p>Prevents spreading by controlling fungi growth on the skin.</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="link-btns2">
+                    <button class="buy-now-btn">Buy Now</button>
+                    <a href="" class="get-updates-link">Get Updates</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section >
+    
+    <section class="first-choice">
+        <div class="container">
+            <div class="row">
+                <div class="image-section1">
+                    <img class="img1" src="./Assets/1st-choice.png" alt="">
+                    <img class="img2" src="./Assets/Revital-doc.png" alt="">
+                </div>
+                <div class="image-section2">
+                    <img class="img1" src="./Assets/powder.png" alt="">
+                    <button class="buy-now">Buy Now</button>
+                    <p>(*As per SMSRC prescription audit report MAT December 2019)</p>
+                    <img class="img2" src="./Assets/mb-Revital-doc.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="faqs-details">
+        <div class="container">
+            <span>Khujli Nahi Abzorb Karo</span>
+            <div class="abzorb-video">
+                <amp-youtube
+                id="myLiveChannel"
+                data-videoid="KS6jSrfxDnc"
+                width="1"
+                height="0.6"
+                layout="responsive"
+                >
+                    <amp-img
+                src="https://www.youtube.com/embed/KS6jSrfxDnc"
+                placeholder
+                layout="fill"
+            />
+            </amp-youtube>
+            </div>
+            <h2>FAQs</h2>
+              <div class="faqs-container">
+                <amp-selector class="faqs-selector" role="tablist" on="select:myTabPanels.toggle(index=event.targetOption, value=true)" keyboard-select-mode="focus">
+                  <div id="tab1" class="tabButton" role="tab" aria-controls="tabpanel1" option="0" selected>Abzorb Dusting Powder</div>
+                  <div id="tab2" class="tabButton" role="tab" aria-controls="tabpanel2" option="1">Abzorb T Antifungal Cream</div>
+                </amp-selector>
+          
+                <amp-selector id="myTabPanels" class="tabpanels">
+                  <div id="tabpanel1" role="tabpanel" aria-labelledby="tab1" option selected>
+                    <amp-accordion  class="faqs-content"  animate>
+                        <section>
+                          <h3>Why I am getting fungal infections?</h3>
+                          <div>
+                          <p>Fungi usually thrive in moist, warm environments. Fungal Infections of the skin can often develop in damp or sweaty areas like feet, groin and folds of skin that don’t get enough airflow.</p>
+                        </div>
+                        </section>
+                    </amp-accordion>   
+                    <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>What is Abzorb Dusting Powder?</h3>
+                            <div>
+                            <p>Abzorb dusting powder contains clotrimazole 1%. Clotrimazole belongs to a group of medicines called imidazoles,which is an antifungal agent that fights and prevents the occurrence of fungal skin infections.</p>
+                          </div>
+                          </section>
+                    </amp-accordion> 
+                    <amp-accordion class="faqs-content"  animate>    
+                          <section>
+                            <h3>How does Abzorb Dusting Powder works?</h3>
+                            <div>
+                            <p>Abzorb Dusting Powder helps by absorbing excess sweat and provides soothing dryness. It contains clotrimazole which is a broad spectrum antifungal that inhibits growth of fungi and helps in reducing the symptoms of fungal infections such as redness and itching.</p>
+                          </div>
+                          </section>
+                       </amp-accordion>
+                       <amp-accordion class="faqs-content"  animate>    
+                          <section>
+                            <h3>Who should choose Abzorb Dusting Powder?</h3>
+                            <div>
+                            <p>Abzorb dusting powder contains clotrimazole 1%. Clotrimazole belongs to a group of medicines called imidazoles,which is an antifungal agent that fights and prevents the occurrence of fungal skin infections.</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                          <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>How to use Abzorb Dusting Powder?</h3>
+                            <div>
+                            <p>• Sprinkle sufficient amounts on the affected areas 2-3 times daily.
+
+                                • The affected area should be thoroughly washed and dried before application, especially between the toes. In order to prevent the growth of fungal infections on skin, use Abzorb Dusting Powder daily.
+                                
+                                • The powder may also be dusted inside articles of clothing and footwear which are in contact with the infected area.
+                                
+                                • Recommended generally to be continued for 2-3 weeks.</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                          <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>I have started using Abzorb Dusting Powder. By when can I expect to start seeing the improvements?</h3>
+                            <div>
+                            <p>Symptoms such as itching or soreness on the skin should improve within a few days. Signs like redness and scaling may take a little longer to disappear. If the symptoms do not improve, seek medical advice.</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                          <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>Can Abzorb Dusting Powder be used on children?</h3>
+                            <div>
+                            <p>Abzorb Dusting Powder can be used on children under the supervision of a physician and in a dose as directed by the physician. It should be applied for the prescribed period only.</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                          <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>Can it be used by Pregnant and breastfeeding women?</h3>
+                            <div>
+                            <p>The topical forms of this medicine are relatively safe for use until the first trimester of pregnancy. However, they should be used only if clearly needed and only under the supervision of your doctor.
+
+                                In breastfeeding women, though the effects are not ascertained, it is recommended to consult your doctor before taking the medicine.</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                          <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>What if I miss an application?</h3>
+                            <div>
+                            <p>• Apply as soon as possible.
+
+                                • If there has been a long gap and it’s time for the next dose then skip and apply the next dose as usual.
+                                
+                                • Do not make up for a missed application by applying extra quantity.</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                          <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>What you need to know before you use Abzorb Dusting Powder?</h3>
+                            <div>
+                            <p>• It is a topical treatment. It should not be consumed and kept away from children.
+
+                                • Do not use the dusting powder on deep skin wounds or severe burns.
+                                
+                                • Avoid contact with the eyes. If the powder gets into your eyes accidentally, rinse thoroughly with running water and tell your doctor immediately
+                                
+                                • Consult the physician if symptoms persist for more than 7 days.
+                                
+                                • Keep out of the reach and sight of children.
+                                
+                                • Do not use the powder if you have hypersensitivity to any of the components.</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                          <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>What are the possible side effects?</h3>
+                            <div>
+                            <p>• Use of too much Clotrimazole Dusting Powder might cause mild to serious side effects.
+
+                                • These include flaking or peeling of the skin, hypersensitivity, tenderness, redness, erythema, and irritation, formation of small bumps, swelling, blister, stinging or burning sensation, contact dermatitis, gastrointestinal disorders, dysuria, and depression.
+                                
+                                • Patients may rarely experience mild burning or irritation immediately after applying the powder. On rare occasions, the patient may find this irritation intolerable and stop treatment.
+                                
+                                • If any of these persist, consult your physician immediately.</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                          <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>Can I use Abzorb Dusting Powder to prevent athlete's foot?</h3>
+                            <div>
+                            <p>Due to the absorbing property of Abzorb Dusting Powder it can help in the prevention of athlete’s foot. The fungus is unable to thrive or spread as sweat and moisture is under control. Additionally, it contains clotrimazole,an antifungal agent, which can also help in preventing infection by inhibiting the growth of fungi.</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                  </div>
+                  <div id="tabpanel2" role="tabpanel" aria-labelledby="tab2" option>
+                    <amp-accordion  class="faqs-content"  animate>
+                        <section>
+                          <h3>Why I am getting fungal infections?</h3>
+                          <div>
+                          <p>Fungi usually thrive in moist, warm environments. Fungal Infections on the skin can often develop in damp or sweaty areas such as feet, groin and inbetween the folds of the skin that don’t get enough airflow.</p>
+                        </div>
+                        </section>
+                    </amp-accordion>   
+                    <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>What is Terbinafine 1% cream and what is it used for?</h3>
+                            <div>
+                            <p>Abzorb T antifungal cream contains Terbinafine 1%. Terbinafine 1% Cream contains the active ingredient terbinafine hydrochloride which is an antifungal. It kills fungi, which cause skin infections. Terbinafine 1% cream is used for the local treatment of fungal infections of the skin only.</p>
+                          </div>
+                          </section>
+                    </amp-accordion> 
+                    <amp-accordion class="faqs-content"  animate>    
+                          <section>
+                            <h3>How to use Abzorb T Antifungal Cream?</h3>
+                            <div>
+                            <p>Abzorb T Antifungal Cream may be applied 1-2 times daily.
+
+                                Direction of use:
+                                
+                                • Cleanse and dry the affected areas thoroughly and wash your hands. Treatment can be helped by Keeping the affected areas clean by regular washing and carefully drying the areas with clean towels and clothes, and not rubbing or scratching the skin.
+                                
+                                • Unscrew the cap then gently squeeze out a small amount of the cream onto your finger.
+                                
+                                • Apply just enough cream to form a thin layer on the affected skin and surrounding areas.
+                                
+                                • Rub in gently. When used between the toes, buttocks or on the groin, the treated area may be covered with a light, fresh gauze strip, especially at night.
+                                
+                                • Wash your hands.</p>
+                          </div>
+                          </section>
+                       </amp-accordion>
+                       <amp-accordion class="faqs-content"  animate>    
+                          <section>
+                            <h3>When will Abzorb T Antifungal cream start showing result?</h3>
+                            <div>
+                            <p>Infections usually appear to improve within a few days of starting to use the cream. It is important that you use the cream regularly even if the infection has improved. If the symptoms do not improve, seek medical advice.</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                          <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>Can Abzorb T Antifungal cream be used on children?</h3>
+                            <div>
+                            <p>Abzorb T antifungal cream is not recommended for use on children under the age of 12 years.</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                          <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>What if you forget to use Abzorb T Antifungal cream?</h3>
+                            <div>
+                            <p>If you forget to use the cream, apply it as soon as you remember. If it is time for the next application, carry on as normal. It is important to try to remember to use the cream or the infection may recur.</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                          <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>What If you use more Abzorb T Antifungal Cream than you should?</h3>
+                            <div>
+                            <p>Remove some of the cream if you apply more than a thin layer.</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                          <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>What you need to know before you use Abzorb T Antifungal Cream?</h3>
+                            <div>
+                            <p>Do not use the cream - if you are allergic to terbinafine hydrochloride or any of the other ingredients of this medicine.
+
+                                Warnings and precautions:
+                                
+                                • This cream is for external use only.
+                                
+                                • Avoid contact with the eyes. If the cream gets in your eyes accidentally, rinse thoroughly with running water and tell your doctor immediately.
+                                
+                                • In the event of allergic reaction, stop using the cream.
+                                
+                                • If you or someone else swallows the cream, go to your doctor or nearest hospital emergency department immediately.</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                          <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>Can it be used in Pregnant and breast-feeding women?</h3>
+                            <div>
+                            <p>If you are pregnant, breast-feeding or are planning to have a baby, ask your doctor for advice before taking this medicine.</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                          <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>Can I drive or use machines after application of Abzorb T Antifungal Cream?</h3>
+                            <div>
+                            <p>Abzorb T Antifungal Cream should not affect your ability to drive or operate machines</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                          <amp-accordion class="faqs-content"  animate> 
+                          <section>
+                            <h3>Do I need prescription to buy Abzorb T Antifungal Cream?</h3>
+                            <div>
+                            <p>Abzorb T Antifungal Cream can be purchased over the counter from a local pharmacy or through e-pharmacy platform without the need of a prescription.</p>
+                          </div>
+                          </section>
+                          </amp-accordion>
+                  </div>
+                </amp-selector>
+              </div>
+              <div class="testimonial-cotainer">
+                  <h2>Consumer Speaks</h2>
+                  <div>
+                      <!-- desktop-view  -->
+                <amp-carousel class="testimonial" id="desktop-testimonial" media="(min-width:768px)" width="1" height="0.4" layout="responsive" type="slides" role="region" controls
+                loop autoplay aria-label="Carousel with arbitrary HTML content">
+                <div class="testimonial-content">
+                    <p>I love abzorb dusting powder. If you face problems of fungal infection or skin disease like itching or rashes, trust me, this product is the best solution. You will get complete relief. The fragrance is very refreshing. One secret of this product is (I don’t know about others) that it worked really well on my pimples and they are gone completely now. My skin is oily and it worked well on me. I would recommend this product to everyone and it’s a must have product at home.</p>
+                    <span>Female 35 years</span>
+                </div>
+                <div class="testimonial-content">
+                    <p>I have been using Abzorb powder regularly since my doctor prescribed it to me 3 years back. I consulted my doctor after I was getting constant itching near my groin area and buttocks due to excessive sweating in summer. Now I use this product regularly as it helps me to control excess sweat and to be honest I have never faced itching problem in the last 2-3 years. The fragrance is good and not very strong like talcum powders.</p>
+                    <span>Male 38 years</span>
+                </div>
+                <div class="testimonial-content">
+                    <p>A friend of mine recommended Abzorb cream to solve my itching problem. It is the best product to fight itching on armpits and jock itch. I was surprised to see the quick results after using this product. Then I started using Abzorb cream with terbinafine and within 2 days I saw the results. After a week, my itching has gone completely. The powerful formula in this cream is excellent. A very good product from Abzorb.</p>
+                    <span>Male 40 years</span>
+                </div>
+                <div class="testimonial-content">
+                    <p>I was suffering from fungal infection two months back due to poor hygiene. I had itching on my body and rashes and had to visit a Doctor near my house. Doctor prescribed me to apply abzorb cream and after I started using this product it gave me very quick result. The product is outstanding and value for money. I will rate this product highly and recommend to those facing skin problems.</p>
+                    <span>Male 27 years</span>
+                </div>
+                <div class="testimonial-content">
+                    <p>I was facing constant itching in the ring finger of my left hand. This was discomforting and even after cleaning the area the itching stayed. I searched on google and found that Abzorb t cream can stop itching by fighting the fungal infection that has grown on skin. I purchased online and started applying abzorb t cream twice daily. Within three days I was able to get rid of the infection. The best cream. Thank you Abzorb.</p>
+                    <span>Female 31 years</span>
+                </div>
+                
+        
+                </amp-carousel>
+
+                <!-- Mobile-view -->
+                <amp-carousel class="testimonial" id="mobile-testimonial" media="(max-width:767px)" width="1" height="1.2" layout="responsive" type="slides" role="region" controls
+                loop autoplay aria-label="Carousel with arbitrary HTML content">
+                <div class="testimonial-content">
+                    <p>I love abzorb dusting powder. If you face problems of fungal infection or skin disease like itching or rashes, trust me, this product is the best solution. You will get complete relief. The fragrance is very refreshing. One secret of this product is (I don’t know about others) that it worked really well on my pimples and they are gone completely now. My skin is oily and it worked well on me. I would recommend this product to everyone and it’s a must have product at home.</p>
+                    <span>Female 35 years</span>
+                </div>
+                <div class="testimonial-content">
+                    <p>I have been using Abzorb powder regularly since my doctor prescribed it to me 3 years back. I consulted my doctor after I was getting constant itching near my groin area and buttocks due to excessive sweating in summer. Now I use this product regularly as it helps me to control excess sweat and to be honest I have never faced itching problem in the last 2-3 years. The fragrance is good and not very strong like talcum powders.</p>
+                    <span>Male 38 years</span>
+                </div>
+                <div class="testimonial-content">
+                    <p>A friend of mine recommended Abzorb cream to solve my itching problem. It is the best product to fight itching on armpits and jock itch. I was surprised to see the quick results after using this product. Then I started using Abzorb cream with terbinafine and within 2 days I saw the results. After a week, my itching has gone completely. The powerful formula in this cream is excellent. A very good product from Abzorb.</p>
+                    <span>Male 40 years</span>
+                </div>
+                <div class="testimonial-content">
+                    <p>I was suffering from fungal infection two months back due to poor hygiene. I had itching on my body and rashes and had to visit a Doctor near my house. Doctor prescribed me to apply abzorb cream and after I started using this product it gave me very quick result. The product is outstanding and value for money. I will rate this product highly and recommend to those facing skin problems.</p>
+                    <span>Male 27 years</span>
+                </div>
+                <div class="testimonial-content">
+                    <p>I was facing constant itching in the ring finger of my left hand. This was discomforting and even after cleaning the area the itching stayed. I searched on google and found that Abzorb t cream can stop itching by fighting the fungal infection that has grown on skin. I purchased online and started applying abzorb t cream twice daily. Within three days I was able to get rid of the infection. The best cream. Thank you Abzorb.</p>
+                    <span>Female 31 years</span>
+                </div>
+                
+        
+                </amp-carousel>
+            </div>
+              </div>
+        </div>
+      
+    </section>
 <footer>
 <h2>Footer Section</h2>
 </footer>
