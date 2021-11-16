@@ -22,6 +22,9 @@
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
     <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
     <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
   
   
   <style amp-custom>
@@ -120,7 +123,6 @@
             width: 90%;
             color: white;
         }
-
 
         /* Home Page */
         .home-slider 
@@ -1868,6 +1870,105 @@ amp-selector[role=tablist].faqs-selector {
             font-size: 0.8rem;
             text-align: center;
             line-height: 4rem;
+        }    
+        .subscribe-form{
+            width: 25rem;
+            min-height: 25rem;
+            background-color: rgb(0, 0, 97);
+            position: absolute;
+            top: 70px;
+            right: 4rem;
+        }
+        .subscribe-form form {
+            border: none;
+            height: auto;
+        }
+        .subscribe-form h3 {
+            color: white;
+            text-align: center;
+            font-family: Poppins,'sans-sarif';
+            line-height: 3rem;
+        }
+        .popup-form .subscribe-form fieldset {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .subscribe-form #dropdown1, .subscribe-form #dropdown2 {
+            display:block;
+            width: 90%;
+            height: 3rem;
+            margin: auto;
+            margin-top: 1rem;
+            border-radius: 1.5rem;
+            padding: 0 20px 0 20px;
+        }
+        .subscribe-form input[type="text"]{
+            display:block;
+            width: 90%;
+            height: 3rem;
+            margin: auto;
+            margin-bottom: 1rem;
+            border-radius: 1.5rem;
+            padding: 0 20px;
+            border: none;
+            outline: none;
+        }
+        .subscribe-form div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .subscribe-form #condition-label{
+            display: inline-block;
+            color: white;
+            /* text-align: center; */
+            margin-left: 0.5rem;
+    
+            font-family: Poppins,'sans-sarif'; 
+        }
+        .subscribe-form input[type="submit"] {
+            display: block;
+            width: 90%;
+            height: 3rem;
+            background: red;
+            color: white;
+            margin:auto;
+            border-radius: 1.5rem;
+            border: none;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+        .subscribe-form .close {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+        }
+        .subscribe-form .fa-times {
+
+            color: white;
+            font-size: 20px;
+
+           
+        }
+        .validation-error {
+            display: block;
+            text-align: center;
+            font-family: Poppins,'sans-sarif';
+        }
+        @media (max-width:992px) {
+            #sidebar1 ul button {
+                position: relative;
+            } 
+            #popup-form2 .subscribe-form {
+                position: absolute;
+                top: 20rem;
+                left: 2rem;
+                /* z-index: 999; */
+            }
+
         }
     </style>
 </head>
@@ -1884,7 +1985,7 @@ amp-selector[role=tablist].faqs-selector {
                 <li><a href=""> video</a></li>
                 <li><a href=""> FAQs</a></li>
                 <li> <a href=""> Testimonial</a></li>
-                <button class="update">Get Updates</button>
+                <button class="update" on="tap:popup-form">Get Updates</button>
             </ul>
         </div>
         </nav>
@@ -1900,10 +2001,122 @@ amp-selector[role=tablist].faqs-selector {
                 <li><a href=""> video</a></li>
                 <li><a href=""> FAQs</a></li>
                 <li> <a href=""> Testimonial</a></li>
-                <button class="update">Get Updates</a></button>
+                <button class="update" on="tap:popup-form2">Get Updates</a></button>
             </ul>
+            <amp-lightbox id="popup-form2" layout="nodisplay">
+                <div class="subscribe-form">
+                    <h3>Subscribe to get updates</h3>
+                <form method="post"
+                action-xhr="https://example.com/subscribe" target="_top" custom-validation-reporting="show-all-on-submit">
+                <fieldset>
+                  <select name="" id="dropdown2">
+                      <option value disabled selected>Select Product </option>
+                    <option value="dudsting-powder">Dusting Powder</option>
+                    <option value="antifungal-cream">Antifungal Cream</option>
+                  </select>
+                  <span visible-when-invalid="valueMissing" validation-for="dropdown2">Please select the product</span>
+                  <span visible-when-invalid="typeMismatch" validation-for="dropdown2"></span>
+                  <br>
+                  <input type="text" name="" id="fullname2" placeholder="Full Name*" required pattern="\p{L}+\s\p{L}+">
+                  <span class="validation-error" visible-when-invalid="valueMissing" validation-for="fullname2"></span>
+                  <span class="validation-error" visible-when-invalid="patternMismatch" validation-for="fullname2">
+                        Please enter your first and last name separated by a space (e.g. Sushant Kulkarni)
+                  </span>
+                  <input type="text" name="" id="mobile-no2" placeholder="Mobile No*" required pattern="(6|7|8|9)\d{9}">
+                  <span class="validation-error" visible-when-invalid="valueMissing" validation-for="mobile-no2">Plaese enter mobile no</span>
+                  <span class="validation-error" visible-when-invalid="patternMismatch" validation-for="mobile-no2">Please enter valid mobile no</span>
+                  <input type="text" name="" id="email2" placeholder="Email*" required pattern="\S+@\S+\.\S+">
+                  <span class="validation-error" visible-when-invalid="valueMissing" validation-for="email2">Plaese enter the email</span>
+                    <span class="validation-error" visible-when-invalid="patternMismatch" validation-for="email2">Please enter valid email address</span>
+                  <br>
+                  <div>
+                  <input type="checkbox" id="terms-condition2" required >
+                  <label for="terms-condition2" id="condition-label"> I agree to Terms & Conditions</label>
+                  <span class="validation-error" visible-when-invalid="valueMissing" validation-for="terms-condition2">Please check the check box</span>
+                </div>
+                <!-- <p>sushant kulkarni</p> -->
+                <!-- <span class="validation-error" visible-when-invalid="typeMismatch" validation-for="terms&condition"></span>   -->
+                  <br>
+                  <input type="submit"
+                    value="Subscribe">
+                </fieldset>
+                <div submit-success>
+                  <template type="amp-mustache">
+                    Subscription successful!
+                  </template>
+                </div>
+                <div submit-error>
+                  <template type="amp-mustache">
+                    Subscription failed!
+                  </template>
+                </div>
+              </form>
+            
+                
+              <a class="close" on="tap:popup-form2.close"><i class="fas fa-times"></i></a>
+            </div>
+            </amp-lightbox>
           </amp-sidebar>
       </header>
+
+<amp-lightbox id="popup-form" layout="nodisplay">
+    <div class="subscribe-form">
+        <h3>Subscribe to get updates</h3>
+    <form method="post"
+    action-xhr="https://example.com/subscribe" target="_top" custom-validation-reporting="show-all-on-submit">
+    <fieldset>
+      <select name="" id="dropdown1">
+          <option value disabled selected>Select Product </option>
+        <option value="dudsting-powder">Dusting Powder</option>
+        <option value="antifungal-cream">Antifungal Cream</option>
+      </select>
+      <span visible-when-invalid="valueMissing" validation-for="dropdown1">Please select the product</span>
+      <!-- <span visible-when-invalid="typeMismatch" validation-for="dropdown1"></span> -->
+      <br>
+      <input type="text" name="" id="fullname" placeholder="Full Name*" required pattern="\p{L}+\s\p{L}+">
+      <span class="validation-error" visible-when-invalid="valueMissing" validation-for="fullname"></span>
+      <span class="validation-error" visible-when-invalid="patternMismatch" validation-for="fullname">
+            Please enter your first and last name separated by a space (e.g. Jane Miller)
+      </span>
+      <input type="text" name="" id="mobile-no" placeholder="Mobile No*" required pattern="(6|7|8|9)\d{9}">
+      <span class="validation-error" visible-when-invalid="valueMissing" validation-for="mobile-no">Plaese enter mobile no</span>
+      <span class="validation-error" visible-when-invalid="patternMismatch" validation-for="mobile-no">Please enter valid mobile no</span>
+      <input type="text" name="" id="email" placeholder="Email*" required pattern="\S+@\S+\.\S+">
+      <span class="validation-error" visible-when-invalid="valueMissing" validation-for="email">Plaese enter the email</span>
+        <span class="validation-error" visible-when-invalid="patternMismatch" validation-for="email">Please enter valid email address</span>
+      <br>
+      <div>
+      <input type="checkbox" name="checkbox" id="terms-condition" required >
+      <label for="terms-condition" id="condition-label"> I agree to Terms & Conditions</label>
+     
+    </div>
+    <span class="validation-error" visible-when-invalid="valueMissing" validation-for="terms-condition">Please check the box if tou want to procede</span>
+    <!-- <span class="validation-error" visible-when-invalid="typeMismatch" validation-for="terms&condition"></span>   -->
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+    <div submit-success>
+      <template type="amp-mustache">
+        Subscription successful!
+      </template>
+    </div>
+    <div submit-error>
+      <template type="amp-mustache">
+        Subscription failed!
+      </template>
+    </div>
+  </form>
+
+    
+  <a class="close" on="tap:popup-form.close"><i class="fas fa-times"></i></a>
+</div>
+</amp-lightbox>
+
+
+
+
+
       <!-- First Page  -->
       <section class="home-slider">
         <amp-carousel height="580" layout="fixed-height" type="slides" role="region" controls
