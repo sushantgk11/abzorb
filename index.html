@@ -46,6 +46,9 @@
             display: flex;
             justify-content: space-between;
         }
+        .brand .img1 {
+            width: 185px;
+        }
         nav ul li 
         {
             display: inline-block;
@@ -131,6 +134,7 @@
             min-height: 45rem;
             background-image: url('./Assets/Web_Banner\ 2.png');
             background-repeat: no-repeat;
+            background-position: center;
             background-size: cover;
         }
         .first-slide .row {
@@ -146,11 +150,14 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
+            /* border: 2px solid yellow; */
         }
-        .first-slide .image-section img {
-            margin-bottom: 5rem;
+        .first-slide .image-section .img1 {
+            width: 307px;
+            height: 421px;
+            /* border: 2px solid red; */
         }
-        .first-slide .image-section .banner-circle-container {
+        .first-slide .image-section .img2 {
             display: none;
         }
         .first-slide .content-section {
@@ -187,7 +194,7 @@
        }
        .first-slide .content-section .banner-circle-container {
            width: 100%;
-           height: 14rem;
+           height: auto;
            /* border: 5px solid red; */
            display: flex;
            flex-direction: row;
@@ -195,28 +202,23 @@
            margin-top: -2rem;
            
        }
-       .banner-circle-container img 
+       .banner-circle-container .img1
        {
-           width: 14rem;
-           height: 14rem;
+           width: 20rem;
+           height: 16rem;
            margin-right: 5rem;
-       }
-       @media (max-width:1100px)
-       {
-        .first-slide .image-section img {
-            margin-bottom: 7rem;
-            /* border: 10px solid green; */
-        }
        }
        @media (max-width:992px)
        {
         .first-slide .content-section p {
             font-size: 2.8rem;
         }
-        .first-slide .image-section img {
-            margin-bottom: 5rem;
-            /* border: 10px solid red; */
-        }
+        .banner-circle-container .img1
+       {
+           width: 16rem;
+           height: 14rem;
+           margin-right: 5rem;
+       }
        }
        @media (max-width:850px)
        {
@@ -235,11 +237,14 @@
         }
         .first-slide .image-section {
             order: 2;
-            margin-top: 2rem;
+            /* margin-top: 2rem; */
             /* border: 2px solid red; */
+            width: 80%;
+            justify-content: space-between;
+            position: relative;
         }
         .first-slide .content-section p {
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin: 1rem 0;
             text-align: center;
         }
@@ -249,17 +254,23 @@
         .first-slide .content-section .banner-circle-container {
             display: none;
         }
-        .first-slide .image-section .banner-circle-container {
+        .first-slide .image-section .img2 {
             display: block;
         }
-        .first-slide .image-section > img {
-            width: 15rem;
+        .first-slide .image-section .img2 {
+            width: 230px;
+            height: 220px;
+            /* border: 2px solid blue; */
+            /* margin-top: -20rem; */
+            position: absolute;
+            right: 0;
+            bottom: 0;
         }
-        .first-slide .image-section .banner-circle-container img {
+        /* .first-slide .image-section .banner-circle-container img {
             margin-top: 5rem;
             width: 12rem;
             height: 12rem;
-        }
+        } */
         
 
        }
@@ -282,11 +293,16 @@
             width: 10rem;
             height: 10rem;
         }
+        .first-slide .image-section .img2 {
+            width: 180px;
+            height: 170px;
+            padding: 0;
+            margin: 0;
+        }
 
        }
-       @media (max-width:576px) {
+       /* @media (max-width:576px) {
         .first-slide .image-section {
-            /* border: 2px solid red; */
             width: 80%;
             justify-content: center;
             align-items: flex-end;
@@ -294,7 +310,6 @@
         }
         .first-slide .image-section > img {
             width: 15rem;
-            /* margin-left: 1rem; */
             position: relative;
         }
         .first-slide .image-section .banner-circle-container img {
@@ -304,7 +319,7 @@
             left: 50%;
             top: 8rem;
         }
-       }
+       } */
 
 /* second slide  */
 .second-slide {
@@ -329,10 +344,11 @@
             justify-content: center;
             align-items: center;
         }
-        .second-slide .image-section1 img{
-            margin-bottom: 3.5rem;
+        .second-slide .image-section1 .img1{
+            width: 335px;
+            height: 472px;
         }
-        .second-slide .image-section1 img:nth-child(2){
+        .second-slide .image-section1 .img2{
             display: none;
         }
 
@@ -340,16 +356,15 @@
            display: flex;
            flex-direction: column;
            justify-content: flex-start;
-           align-content: center;
+           align-content: flex-start;
            width: 40%;
-           /* padding-left: 2rem; */
        }
        .second-slide .content-section p {
            color: rgb(1, 1, 123);
-           font-size: 3.2rem;
+           font-size: 3rem;
            font-weight: 600;
            font-family: Poppins,sans-serif;
-           margin-top: 3rem;
+           margin-top: 2rem;
            text-align: center;
            /* border: 2px solid red; */
            
@@ -376,16 +391,15 @@
            align-items: flex-end;
        }
 
-       .second-slide .image-section2 img {
-          width: 15rem;
-          margin-bottom: 1rem;
+       .second-slide .image-section2 .img1 {
+         width: 446px;
+         /* height: 392px; */
+       }
+       .second-slide .image-section2 .img2 {
+           width: 345px;
        }
        @media (max-width:1200px)
        {
-           .second-slide .image-section1 img {
-               width: 18rem;
-               margin-bottom: -3rem;
-           }
            .second-slide .content-section p {
             margin-top: 1rem;
        }
@@ -414,20 +428,13 @@
                 /* border: 2px solid yellow; */
            }
          
-           .second-slide .image-section1 img:nth-child(2){
-            display: block;
-            /* border: 2px solid yellow; */
-            margin-top: 1rem;
-            width: 20rem;
-
-        }
-        .second-slide .image-section1 img:nth-child(1){
+        .second-slide .image-section1 .img1 {
             display: none;
         }
         .second-slide .image-section2  {
             display: none;
         }
-        .second-slide .content-section img {
+        .second-slide .content-section .img1 {
             display: none;
         }
         .second-slide .content-section {
@@ -436,10 +443,20 @@
             /* border: 2px solid blue; */
         }
         .second-slide .image-section1 {
+            width: 80%;
             order: 2;
             display: flex;
             align-items: flex-start;
                /* border: 1px solid red; */
+        }
+        .second-slide .image-section1 .img2{
+            display: block;
+            /* border: 2px solid yellow; */
+            /* margin-top: 1rem; */
+            width: 267px;
+            height: 350px;
+            
+
         }
         .second-slide .content-section p {
             font-size: 2rem;
@@ -482,7 +499,7 @@
             align-items: flex-end;
             /* border: 5px solid blue; */
         }
-        .third-slide .image-section1 img{
+        .third-slide .image-section1 .img1{
             margin-top: 7rem;
             width: 35rem
          }
@@ -493,7 +510,7 @@
             justify-content: center;
             align-items: center;
         }
-        .third-slide .image-section2 img 
+        .third-slide .image-section2 .img1 
         {
             width: 20rem;
         }
@@ -511,10 +528,12 @@
        }
 
        @media (max-width:992px){
-           .third-slide .image-section1 img {
-            width: 30rem;
+           .third-slide .image-section1 .img1 {
+            /* margin: 0; */
+            width: 25rem;
            }
-           .third-slide .image-section2 img {
+           .third-slide .image-section2 .img1 {
+              
                width: 16rem;
            }
        }
@@ -532,7 +551,7 @@
             align-items: center;
 
         }
-        .third-slide .image-section1 img {
+        .third-slide .image-section1 .img1 {
             width: 25rem;
             /* border: 2px solid yellow; */
             margin-top: 1rem;
@@ -542,7 +561,7 @@
             order: 1;
             /* border: 2px solid red; */
         }
-        .third-slide .image-section2 img{
+        .third-slide .image-section2 .img1{
            width: 14rem;
            height: 12rem;
             
@@ -628,6 +647,10 @@
         align-items: center;
         /* border: 2px solid pink; */
     }
+    .uses .container .row > div .image-container .img1 {
+            width: 10rem;
+            height: 10rem;
+        }
     @media (max-width:1200px)
     {
         .uses .container .row {
@@ -635,7 +658,7 @@
             justify-content: space-between;
             margin: auto;
         }
-        .uses .container .row > div .image-container img {
+        .uses .container .row > div .image-container .img1 {
             width: 10rem;
             height: 10rem;
         }
@@ -649,7 +672,7 @@
             width: 18rem;
             height: 18rem;
         }
-        .uses .container .row > div .image-container img {
+        .uses .container .row > div .image-container .img1 {
             width: 7rem;
             height: 7rem;
             /* margin-bottom: 4rem; */
@@ -726,6 +749,10 @@
         align-items: center;
         /* border: 2px solid yellow; */
     }
+    .uses .use-slides .image-container .img1 {
+        width: 10rem;
+        height: 10rem;
+    }
     .uses .use-slides figure figcaption {
         margin-top: 0;
         width: 18rem;
@@ -757,6 +784,8 @@
         height: auto;
         background-image: url('./Assets/bg-3.png');
         background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
     }
     .dusting-powder .container{
         max-width: 1200px;
@@ -781,7 +810,7 @@
         /* border: 2px solid pink; */
         padding-top: 3rem;
     }
-    .dusting-powder .row .image-section img {
+    .dusting-powder .row .image-section .banner-3 {
         width: 100%;
     }
     .dusting-powder .row .content-section .link-btns {
@@ -789,7 +818,7 @@
         justify-content: flex-start;
         align-items: center;
     }
-    .dusting-powder .row .content-section a img,  .dusting-powder .row .image-section .link-btns a img {
+    .dusting-powder .row .content-section a .img1,  .dusting-powder .row .image-section .link-btns a .img1 {
         width: 12rem;
     }
     .dusting-powder .row .content-section button,  .dusting-powder .row .image-section .link-btns button {
@@ -833,8 +862,9 @@ align-items: center;
         /* padding: 1rem; */
         min-height: 8rem;
     }
-    .dusting-powder .row .content-section .detail-cards .row .card img {
-        width: 5rem;
+    .dusting-powder .row .content-section .detail-cards .row .card .img1 {
+        width: 150px;
+        /* height: 110px; */
         margin-right: 1rem;
     }
     .dusting-powder .row .content-section .detail-cards .row .card h3 {
@@ -967,6 +997,9 @@ align-items: center;
         height: auto;
         background-image: url('./Assets/bg-4.jpg');
         background-repeat: no-repeat;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
     }
     .antifungal-cream .container{
         max-width: 1200px;
@@ -994,7 +1027,7 @@ align-items: center;
         /* border: 2px solid pink; */
         padding-top: 3rem;
     }
-    .antifungal-cream .row .image-section img {
+    .antifungal-cream .row .image-section .banner-4 {
         width: 100%;
     }
     .antifungal-cream .row .content-section .link-btns {
@@ -1003,7 +1036,7 @@ align-items: center;
         align-items: center;
         margin-bottom: 1rem;
     }
-    .antifungal-cream .row .content-section a img,  .antifungal-cream .row .image-section .link-btns a img {
+    .antifungal-cream .row .content-section a .img1,  .antifungal-cream .row .image-section .link-btns a .img1 {
         width: 12rem;
     }
     .antifungal-cream .row .content-section button,  .antifungal-cream .row .image-section .link-btns button {
@@ -1047,8 +1080,9 @@ align-items: center;
         /* padding: 1rem; */
         min-height: 8rem;
     }
-    .antifungal-cream .row .content-section .detail-cards .row .card img {
-        width: 5rem;
+    .antifungal-cream .row .content-section .detail-cards .row .card .img1 {
+        width: 150px;
+        /* height: ; */
         margin-right: 1rem;
     }
     .antifungal-cream .row .content-section .detail-cards .row .card h3 {
@@ -1129,7 +1163,7 @@ align-items: center;
     .antifungal-cream .row .content-section {
         order: 2;
     }
-    .antifungal-cream .row .image-section > img {
+    .antifungal-cream .row .image-section .banner-4 {
         /* margin-top: -2rem; */
         padding-top: 3rem;
 
@@ -1145,7 +1179,7 @@ align-items: center;
         justify-content: flex-start;
         align-items: center;
         /* border: 2px solid red; */
-        margin-bottom: 0;
+        margin-bottom: 2rem;
     }
     .antifungal-cream .row .content-section {
         width: 80%;
@@ -1173,7 +1207,7 @@ align-items: center;
 .antifungal-cream .row .content-section .detail-cards .row .card {
     margin-top: 1rem;
 }
-.antifungal-cream .row .content-section a img,  .antifungal-cream .row .image-section .link-btns a img {
+.antifungal-cream .row .content-section a .img1,  .antifungal-cream .row .image-section .link-btns a .img1 {
         width:5.5rem;
     }
     .antifungal-cream .row .content-section button,  .antifungal-cream .row .image-section .link-btns button {
@@ -1190,6 +1224,9 @@ align-items: center;
     width: 100%;
     background-image: url('./Assets/bg-5.png');
     background-repeat: no-repeat;
+    background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
 
 }
 .first-choice .container {
@@ -1240,7 +1277,12 @@ align-items: center;
     text-align: center;
 
 }
-
+.first-choice .row .image-section1 .img2 {
+    width: 433px;
+}
+.first-choice .row .image-section2 .img1 {
+  width: 487px;  
+}
 .first-choice .row .image-section1 .img1, .first-choice .row .image-section2 .img2{
     display: none;
 }
@@ -1507,8 +1549,79 @@ amp-selector[role=tablist].faqs-selector {
         }
        }
 
-
-
+       /* Last-page  */
+       .last-page {
+           width: 100%;
+           background-image: url('./Assets/bg-6.jpg');
+           background-repeat: no-repeat;
+           background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+       }
+       .last-page .container {
+           max-width: 1200px;
+           margin: auto;
+       }
+       .last-page .container .row {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           /* border: 2px solid yellow; */
+       }
+       .last-page .container .row .content-section {
+           width: 65%;
+           /* border: 2px solid red; */
+           text-align: center;
+       }
+       .last-page .container .row .image-section {
+           width: 35%;
+       }
+       .last-page .container .row .image-section .img1 {
+           width: 356px;
+           /* border: 2px solid red; */
+       }
+       .last-page .buy-now {
+        background: red;
+           padding: 15px 0;
+           color: white;
+           border: none;
+           border-radius: 30px;
+           width: 150px;
+           font-size: 1rem;
+           cursor: pointer;
+           margin-top: 1rem;
+       }
+       .last-page .container .row .content-section p {
+           font-family: Poppins,'sans-sarif';
+           font-weight: bold;
+           color: white;
+           font-size: 250%;
+       }
+       @media (max-width:850px){
+        .last-page .container .row {
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           /* border-radius: 2px solid red; */
+       }
+       .last-page .container .row .content-section {
+           width: 90%;
+           /* border: 2px solid red; */
+           margin-top: 1rem;
+       }
+       .last-page .container .row .image-section {
+           display: flex;
+           justify-content: center;
+           width: 90%;
+           /* border: 2px solid red; */
+           margin-top: 1rem;
+       }
+       }
+       @media (max-width:576px){
+        .last-page .container .row .content-section p {
+            font-size: 1.5rem;
+        }
+       }
 
 
 
@@ -1525,11 +1638,236 @@ amp-selector[role=tablist].faqs-selector {
 
         footer{
             width: 100%;
-            min-height: 10rem;
+            min-height: 20rem;
             background-color: black;
             color: white;
-            display: grid;
-            place-content: center;
+            
+        }
+        footer .container {
+            max-width: 1200px;
+            /* border: 5px solid blue; */
+            margin:auto;
+        }
+        footer .row {
+            min-height: 20rem;
+            /* border: 1px solid yellow ; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer .row .col {
+            height: 20rem;
+            /* border: 1px solid red; */
+        }
+        footer .col1 {
+            width: 25%;
+        }
+        footer .col2 {
+            width: 40%;
+        }
+        footer .col3 {
+            width: 15%;
+        }
+        footer .col4 {
+            width: 20%;
+        }
+        
+        footer .col1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            /* border: 1px solid cyan; */
+
+        }
+        footer .col1 .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+        footer .col1 .img1 {
+            width: 150px
+            /* height: 74px; */
+        }
+        footer .col1 .img2 {
+            width: 39px;
+        }
+        
+        footer .col2 .container  {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        footer .col2 .container p {
+            font-size: 1rem;
+            font-family: Poppins,'sans-sarif';
+            font-weight: bold;
+            line-height: 2rem;
+        }
+        footer .col2 .container span {
+            font-size: 0.8rem;
+            font-family: Poppins,'sans-sarif';
+            line-height: 2rem;
+        }
+        footer .col2 .container form {
+            width: auto;
+            height: auto;
+            position: relative;
+        }
+        footer .col2 .container input[type="text"]{
+            width: 22rem;
+            height: 2.5rem;
+            border-radius: 30px;
+            border: none;
+            position: relative;
+        }
+        footer .col2 .container button {
+            background: red;
+            height: 2.5rem;
+           color: white;
+           border: none;
+           border-radius: 30px;
+           width: 8rem;
+           font-size: 1rem;
+           cursor: pointer;
+           /* margin-top: 1rem; */
+           position: absolute;
+           top: 0;
+           right: 0;
+        }
+        footer .col2 .container .social-media-info p {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        footer .col2 .container .social-media-info {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        footer .col2 .container .social-media-info a {
+            margin:0 1rem;
+            font-size: 1.2rem;
+            color: white;
+            cursor: pointer;
+
+            }
+            footer .col3 .container {
+                height: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            footer .col3 .container ul li{
+                list-style-type: none;
+                font-size: 1rem;
+            font-family: Poppins,'sans-sarif';
+            font-weight: bold;
+            line-height: 2rem;
+            }
+            footer .col3 .container ul li a {
+                text-decoration: none;
+                color: white;
+            }
+            footer .col4 .container {
+                height: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                
+            }
+            footer .col4 .container div {
+                height: 50%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                /* border: 2px solid yellow; */
+            }
+            footer .col4 .container ul li{
+                list-style-type: none;
+                font-size: 1rem;
+            font-family: Poppins,'sans-sarif';
+            font-weight: bold;
+            line-height: 2rem;
+            }
+            footer .col4 .container ul li a {
+                text-decoration: none;
+                color: white;
+            }
+            @media (max-width:992px) {
+            footer .row {
+                flex-wrap: wrap;
+            }
+            footer .col1 {
+            width: 50%;
+        }
+        footer .col2 {
+            width: 50%;
+        }
+        footer .col3 {
+            width: 50%;
+        }
+        footer .col4 {
+            width: 50%;
+        }
+        footer .row {
+            height: auto;
+        }
+        footer .row .col {
+            height: 15rem
+        }
+        footer .col3 .container {
+                height: auto;
+                justify-content: center;
+                align-items: center;
+            }
+            footer .col4 .container div {
+                height: 100%;
+            }
+
+        }
+        @media (max-width:768px){
+            footer .col1 {
+            width: 80%;
+        }
+        footer .col2 {
+            width: 80%;
+        }
+        footer .col3 {
+            width: 50%;
+        }
+        footer .col4 {
+            width: 50%;
+        }
+        footer .col2 .container  {
+           
+            justify-content: center;
+            align-items: center;
+        
+        }
+        footer .col4 .container {
+            justify-content: center;
+            align-items: center;
+        } 
+        }
+        @media (max-width:576px){
+            footer .col2 .container input[type="text"] {
+                width: 90%;
+            }
+        }
+        footer hr {
+            border: 1px solid white;
+
+        }
+        footer > p{
+            font-family: Poppins,"sans-sarif";
+            color: white;
+            font-size: 0.8rem;
+            text-align: center;
+            line-height: 4rem;
         }
     </style>
 </head>
@@ -1539,7 +1877,7 @@ amp-selector[role=tablist].faqs-selector {
         <nav>
             <a class="toggle-open" on="tap:sidebar1.open"><i class="fas fa-bars"></i></a>
             <div>
-            <div class="brand"><img src="./Assets/header-logo.png" alt=""></div>
+            <div class="brand"><amp-img class="img1" src="./Assets/header-logo.png" alt="" width="185" height="74" layout="responsive"></div>
             <ul>
                 <li><a href=""> Benefit</a></li>
                 <li> <a href=""> Product</a></li>
@@ -1556,7 +1894,7 @@ amp-selector[role=tablist].faqs-selector {
         <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
             <a class="toggle-close" on="tap:sidebar1.close"><i class="fas fa-times"></i></a>
             <ul>
-                <li><a href="#"><img src="./Assets/header-logo.png" alt=""></li>
+                <li><div class="brand"><a href="#"><amp-img class="img1" src="./Assets/header-logo.png" alt="" width="185" height="74" layout="responsive"></amp-img></a></div></li>
                 <li><a href=""> Benefit</a></li>
                 <li> <a href=""> Product</a></li>
                 <li><a href=""> video</a></li>
@@ -1574,17 +1912,16 @@ amp-selector[role=tablist].faqs-selector {
               <div class="first-slide">
                <div class="row">
                    <div class="image-section">
-                    <img src="./Assets/mb-banner-10.png" alt="">
-                    <div class="banner-circle-container">
-                        <img src="./Assets/banner-circle.png" alt="">
-                    </div>
+                    <amp-img class="img1" src="./Assets/mb-banner-10.png"  width="303" height="421" layout="responsive" alt=""></amp-img>
+                    
+                      <amp-img class="img2" src="./Assets/banner-circle.png" width="230" height="220" layout="responsive" alt=""></amp-img>
                    </div>
                    <div class="content-section">
                     <p>Mujhe Paseeney aur <br>
                         khujli se door rakhta hai <span> Abzorb, Aur aapko?</span></p>
                     <button class="explore-more">Explore More</button>
                     <div class="banner-circle-container">
-                        <img src="./Assets/banner-circle.png" alt="">
+                        <amp-img class="img1" src="./Assets/banner-circle.png" alt="" width="417" height="397" layout="responsive" alt=""></amp-img>
                     </div>
                    </div>
                </div>
@@ -1594,16 +1931,16 @@ amp-selector[role=tablist].faqs-selector {
               <div class="second-slide">
                <div class="row">
                    <div class="image-section1">
-                       <img src="./Assets/item2.png" alt="">
-                       <img src="./Assets/mobile-banner-2.png" alt="">
+                       <amp-img class="img1" src="./Assets/item2.png" alt="" width="335" height="472" layout="responsive"></amp-img>
+                       <amp-img class="img2" src="./Assets/mobile-banner-2.png" width="247" height="350" layout="responsive" alt=""></amp-img>
                    </div>
                    <div class="content-section">
                        <p>Khujli se mileygi ab Teen guna raahat</p>
                        <button class="explore-more">Explore More</button>
-                       <img src="./Assets/slide2.png" alt="">
+                       <amp-img class="img1" src="./Assets/slide2.png" width="918" height="520" layout="responsive" alt=""></amp-img>
                    </div>
                    <div class="image-section2">
-                        <img src="./Assets/3xfaster.png" alt="">
+                        <amp-img src="./Assets/3xfaster.png" class="img1" width="446" height="392" layout="responsive" alt=""></amp-img>
                    </div>
                </div>
               </div>
@@ -1612,10 +1949,10 @@ amp-selector[role=tablist].faqs-selector {
               <div class="third-slide">
                <div class="row">
                    <div class="image-section1">
-                    <img src="./Assets/slider3.png">
+                    <amp-img src="./Assets/slider3.png" class="img1" width="1140" height="817" layout="responsive"></amp-img>
                    </div>
                    <div class="image-section2">
-                    <img src="./Assets/slider2-1.png" alt="">
+                    <amp-img src="./Assets/slider2-1.png" class="img1" width="668" height="492" layout="responsive" alt=""></amp-img>
                     <button class="explore-more">Explore More</button>
                    </div>
                </div>
@@ -1635,7 +1972,7 @@ amp-selector[role=tablist].faqs-selector {
             <div class="use1">
             <figure>
             <div class="image-container">
-                <img src="./Assets/fi.png" layout="responsive"  >
+                <amp-img class="img1" src="./Assets/fi.png" width="179" height="163" layout="responsive" ></amp-img>
             </div>
             <figcaption>
                 <amp-accordion animate>
@@ -1652,7 +1989,7 @@ amp-selector[role=tablist].faqs-selector {
         <div class="use2">
             <figure>
                 <div class="image-container">
-                    <img src="./Assets/Controls-Itching.png" layout="responsive" >
+                    <amp-img class="img1" src="./Assets/Controls-Itching.png" width="205" height="205" layout="responsive" ></amp-img>
                 </div>
                 <figcaption>
                     <amp-accordion animate>
@@ -1668,7 +2005,7 @@ amp-selector[role=tablist].faqs-selector {
             <div class="use3">
                 <figure>
                     <div class="image-container">
-                        <img src="./Assets/Excess-sweat.png" layout="responsive" >
+                        <amp-img class="img1" src="./Assets/Excess-sweat.png" width="104" height="159" layout="responsive" ></amp-img>
                     </div>
                     <figcaption>
                         <amp-accordion animate>
@@ -1694,7 +2031,7 @@ amp-selector[role=tablist].faqs-selector {
                 <div class="use1">
                     <figure>
                     <div class="image-container">
-                        <img src="./Assets/fi.png" alt=""  >
+                        <amp-img class="img1" src="./Assets/fi.png" width="179" height="163" layout="responsive" ></amp-img>
                     </div>
                     <figcaption>
                         <amp-accordion animate>
@@ -1716,7 +2053,7 @@ amp-selector[role=tablist].faqs-selector {
                 <div class="use2">
                     <figure>
                         <div class="image-container">
-                            <img src="./Assets/Controls-Itching.png" alt="" >
+                            <amp-img class="img1" src="./Assets/Controls-Itching.png" width="205" height="205" layout="responsive" ></amp-img>
                         </div>
                         <figcaption>
                             <amp-accordion animate>
@@ -1737,7 +2074,7 @@ amp-selector[role=tablist].faqs-selector {
                 <div class="use3">
                     <figure>
                         <div class="image-container">
-                            <img src="./Assets/Excess-sweat.png" layout="responsive" >
+                            <amp-img class="img1" src="./Assets/fi.png" width="179" height="163" layout="responsive" ></amp-img>
                         </div>
                         <figcaption>
                             <amp-accordion animate>
@@ -1766,15 +2103,15 @@ amp-selector[role=tablist].faqs-selector {
         <!-- <div> -->
         <div class="image-section">
             <div class="link-btns">
-                <a href=""><img src="./Assets/header-logo.png" alt=""></a>
+                <a href=""><amp-img class="img1" src="./Assets/header-logo.png" width="185" height="74" layout="responsive"></amp-img></a>
                 <button class="dusting-powder-btn">dusting powder</button>
             </div>
-            <img src="./Assets/banner-3-img1.png" alt="">
+            <amp-img class="banner-3" src="./Assets/banner-3-img1.png" width="517" height="611" alt="" layout="responsive"></amp-img>
         </div>
     <!-- </div> -->
         <div class="content-section">
             <div class="link-btns">
-                <a href=""><img src="./Assets/header-logo.png" alt=""></a>
+                <a href=""><amp-img class="img1" src="./Assets/header-logo.png" width="185" height="74" layout="responsive"></amp-img></a>
                 <button class="dusting-powder-btn">dusting powder</button>
             </div>
             <p>Trusted by skin specialists, Abzorb Dusting Powder’s 2X# sweat control formula absorbs excess sweat and Clotrimazole helps fight fungal infection.</p>
@@ -1782,14 +2119,14 @@ amp-selector[role=tablist].faqs-selector {
             <div class="detail-cards">
                 <div class="row">
                 <div class="card">
-                    <img src="./Assets/Abzorbs Excess Sweat.png" alt="">
+                    <amp-img class="img1" src="./Assets/Abzorbs Excess Sweat.png" alt="" width="202" height="180" layout="responsive"></amp-img>
                     <div>
                     <h3>ABSORBS EXCESS SWEAT</h3>
                     <p>Unique combination of talc and starch helps absorb excess sweat.</p>
                 </div>
                 </div>
                 <div class="card">
-                    <img src="./Assets/treatsfungal.png" alt="">
+                    <amp-img class="img1" src="./Assets/treatsfungal.png" alt="" width="87" height="86" layout="responsive"></amp-img>
                     <div>
                     <h3>TREATS FUNGAL INFECTION</h3>
                     <p>Clotrimazole present in Abzorb Dusting Powder effectively treats fungal infections.</p>
@@ -1798,14 +2135,14 @@ amp-selector[role=tablist].faqs-selector {
                 </div>
                 <div class="row">
                 <div class="card">
-                    <img src="./Assets/prevent recussion.png" alt="">
+                    <amp-img class="img1" src="./Assets/prevent recussion.png" alt="" width="87" height="87" layout="responsive"></amp-img>
                     <div>
                     <h3>PREVENTS RECUSSION</h3>
                     <p>It provides soothing dry maintenance and prevents the recurrence of fungal infections.</p>
                 </div>
                 </div>
                 <div class="card">
-                    <img src="./Assets/Controls Itching.png" alt="">
+                    <amp-img class="img1" src="./Assets/Controls Itching.png" alt="" width="87" height="87" layout="responsive" ></amp-img>
                     <div>
                     <h3>CONTROLS ITCHING</h3>
                     <p>Abzorb Dusting Powder provides relief from itching & burning sensation.</p>
@@ -1830,15 +2167,15 @@ amp-selector[role=tablist].faqs-selector {
             <!-- <div> -->
             <div class="image-section">
                 <div class="link-btns">
-                    <a href=""><img src="./Assets/header-logo.png" alt=""></a>
+                    <a href=""><amp-img class="img1" src="./Assets/banner-4-logo.png" width="218" height="49" layout="responsive"></amp-img></a>
                     <button class="dusting-powder-btn">antifungal cream</button>
                 </div>
-                <img src="./Assets/fungalCream.png" alt="">
+                <amp-img class="banner-4"src="./Assets/fungalCream.png" alt="" width="430" height="316" alt="" layout="responsive"></amp-img>
             </div>
         <!-- </div> -->
             <div class="content-section">
                 <div class="link-btns">
-                    <a href=""><img src="./Assets/banner-4-logo.png" alt=""></a>
+                    <a href=""><amp-img class="img1" src="./Assets/banner-4-logo.png" alt="" width="218" height="49" layout="responsive"></amp-img></a>
                     <button class="dusting-powder-btn">antifungal cream</button>
                 </div>
                 <p>The new generation antifungal cream provides effective and fast relief from fungal infections such as Jock Itch, infection between the folds of inner thighs, underside of breasts and armpit, and toes & fingers.</p>
@@ -1846,14 +2183,14 @@ amp-selector[role=tablist].faqs-selector {
                 <div class="detail-cards">
                     <div class="row">
                     <div class="card">
-                        <img src="./Assets/treatsfungal.png" alt="">
+                        <amp-img class="img1" src="./Assets/treatsfungal.png" width="87" height="86" layout="responsive" alt=""></amp-img>
                         <div>
                         <h3>TREATS FUNGAL INFECTION</h3>
                         <p>The best in class antifungal molecule, terbinafine treats fungal infections on skin effectively.</p>
                     </div>
                     </div>
                     <div class="card">
-                        <img src="./Assets/redness.png" alt="">
+                        <amp-img class="img1" src="./Assets/redness.png" width="82" height="82" layout="responsive" alt=""></amp-img>
                         <div>
                         <h3>REDUCES REDNESS</h3>
                         <p>AbzorbT antifungal cream provides fast relief from fungal infections & helps reduce redness.</p>
@@ -1862,14 +2199,14 @@ amp-selector[role=tablist].faqs-selector {
                     </div>
                     <div class="row">
                     <div class="card">
-                        <img src="./Assets/Controls Itching.png" alt="">
+                        <amp-img class="img1" src="./Assets/Controls Itching.png" width="87" height="87" layout="responsive" alt=""></amp-img>
                         <div>
                         <h3>ABSORBS EXCESS SWEAT</h3>
                         <p>Abzorb T Antifungal Cream provides effective and 3X~ faster relief for itchy skin.</p>
                     </div>
                     </div>
                     <div class="card">
-                        <img src="./Assets/spreading.png" alt="">
+                        <amp-img class="img1" src="./Assets/spreading.png" width="89" height="90" layout="responsive" alt=""></amp-img>
                         <div>
                         <h3>PREVENTS SPREADING</h3>
                         <p>Prevents spreading by controlling fungi growth on the skin.</p>
@@ -1890,14 +2227,14 @@ amp-selector[role=tablist].faqs-selector {
         <div class="container">
             <div class="row">
                 <div class="image-section1">
-                    <img class="img1" src="./Assets/1st-choice.png" alt="">
-                    <img class="img2" src="./Assets/Revital-doc.png" alt="">
+                    <amp-img class="img1" width="184" height="133" layout="responsive" src="./Assets/1st-choice.png" alt=""></amp-img>
+                    <amp-img class="img2" width="433" height="465" layout="responsive" src="./Assets/Revital-doc.png" alt=""></amp-img>
                 </div>
                 <div class="image-section2">
-                    <img class="img1" src="./Assets/powder.png" alt="">
+                    <amp-img class="img1" width="487" height="333" layout="responsive" src="./Assets/powder.png" alt=""></amp-img>
                     <button class="buy-now">Buy Now</button>
                     <p>(*As per SMSRC prescription audit report MAT December 2019)</p>
-                    <img class="img2" src="./Assets/mb-Revital-doc.png" alt="">
+                    <amp-img class="img2" width="345" height="386" layout="responsive" src="./Assets/mb-Revital-doc.png" alt=""></amp-img>
                 </div>
             </div>
         </div>
@@ -2231,8 +2568,77 @@ amp-selector[role=tablist].faqs-selector {
         </div>
       
     </section>
+
+    <section class="last-page">
+        <div class="container">
+            <div class="row">
+                <div class="content-section">
+                    <p>Haath ka karo sahi istemaal,</p>
+                    <p>Khujli nahi karo kamaal</p>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+                <div class="image-section">
+                    <amp-img class="img1" src="./Assets/banner-6.png" alt="" width="356" height="513" layout="responsive"></amp-img>
+                </div>
+            </div>
+        </div>
+    </section>
+
 <footer>
-<h2>Footer Section</h2>
+    <div class="container">
+    <div class="row">
+        <div class="col col1">
+            <div class="container">
+                <amp-img class="img1" src="./Assets/logo.png" width="185" height="74" layout="responsive"></amp-img>
+                <amp-img class="img2" src="./Assets/Sun-pharma-logo.png" width="39" height="52" layout="responsive"></amp-img>
+            </div>
+        </div>
+        <div class="col col2">
+            <div class="container">
+                <div>
+                <p>Sign up for free</p>
+                <span>Catch up on the latest updates, news and much more</span>
+                <form >
+                <input type="text" name="" id="">
+                <button>subscribe now</button>
+                </form>
+                <div class="social-media-info">
+                <p>follow us </p>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-facebook-square"></i></a>
+                <a href=""><i class="fab fa-twitter-square"></i></a>
+                <a href=""><i class="fab fa-youtube-square"></i></a>
+                 </div>
+                </div>
+            </div>
+        </div>
+        <div class="col col3">
+            <div class="container">
+                <div>
+                <ul>
+                    <li> <a href="#">Benefits</a>  </li>
+                    <li> <a href="#">Products</a></li>
+                    <li> <a href="#">video</a></li>
+                    <li> <a href="#">FAQs</a></li>
+                    <li><a href="#">Testimonial</a> </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class="col col4">
+            <div class="container">
+                <div>
+                <ul>
+                    <li><a href="">Terms and conditions</a> </li>
+                    <li><a href="">Privacy Policy</a> </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
+<p>Copyrights &copy; 2021 Sun Pharma I All Rights Reserved</p>
 </footer>
   </body>
 </html>
