@@ -1985,6 +1985,18 @@ amp-selector[role=tablist].faqs-selector {
             }
 
         }
+        @media (max-width:576px){
+            .subscribe-form {
+                width: 90%;
+                min-height: 25rem;
+                position: absolute ;
+                left: 0;
+                /* right: 0; */
+            }
+            .subscribe-form h3 {
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
   <body>
@@ -2091,7 +2103,7 @@ amp-selector[role=tablist].faqs-selector {
       <input type="text" name="" id="fullname" placeholder="Full Name*" required pattern="\p{L}+\s\p{L}+">
       <span class="validation-error" visible-when-invalid="valueMissing" validation-for="fullname"></span>
       <span class="validation-error" visible-when-invalid="patternMismatch" validation-for="fullname">
-            Please enter your first and last name separated by a space (e.g. Jane Miller)
+            Please enter your first and last name separated by a space (e.g. Sushant Kulkarni)
       </span>
       <input type="text" name="" id="mobile-no" placeholder="Mobile No*" required pattern="(6|7|8|9)\d{9}">
       <span class="validation-error" visible-when-invalid="valueMissing" validation-for="mobile-no">Plaese enter mobile no</span>
@@ -2111,16 +2123,6 @@ amp-selector[role=tablist].faqs-selector {
       <input type="submit"
         value="Subscribe">
     </fieldset>
-    <div submit-success>
-      <template type="amp-mustache">
-        Subscription successful!
-      </template>
-    </div>
-    <div submit-error>
-      <template type="amp-mustache">
-        Subscription failed!
-      </template>
-    </div>
   </form>
 
     
